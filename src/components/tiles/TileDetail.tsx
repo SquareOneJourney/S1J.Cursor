@@ -16,7 +16,7 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
 
   // Special handling for Marketing Research Without AI tile
   if (tile.id === 'marketing-research-without-ai') {
-    return <MarketingResearchWithoutAI />;
+    return <MarketingResearchWithoutAI onBack={onBack} />;
   }
 
   const getDifficultyColor = (difficulty: string) => {
@@ -32,7 +32,6 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
     switch (journeyType) {
       case 'explore': return 'bg-blue-100 text-blue-800';
       case 'start': return 'bg-green-100 text-green-800';
-      case 'integrate': return 'bg-orange-100 text-orange-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };

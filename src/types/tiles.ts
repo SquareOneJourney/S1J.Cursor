@@ -3,7 +3,7 @@ export interface Tile {
   title: string;
   description: string;
   level: number;
-  journeyType: 'explore' | 'start' | 'integrate';
+  journeyType: 'explore' | 'start';
   parentId?: string; // For nested tiles
   children?: string[]; // IDs of child tiles
   content: {
@@ -28,5 +28,5 @@ export interface TileCategory {
   description: string;
   tiles: Tile[];
   level: number;
-  journeyType: 'explore' | 'start' | 'integrate';
+  journeyType: 'explore' | 'start';
 }

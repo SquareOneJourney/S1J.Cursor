@@ -125,7 +125,6 @@ function createWorksheetItemsHTML(items: WorksheetItem[]): string {
         <p><strong>Total Items:</strong> ${items.length}</p>
         <p><strong>Explore Items:</strong> ${items.filter(item => item.journeyType === 'explore').length}</p>
         <p><strong>Start Items:</strong> ${items.filter(item => item.journeyType === 'start').length}</p>
-        <p><strong>Integrate Items:</strong> ${items.filter(item => item.journeyType === 'integrate').length}</p>
       </section>
 
       ${items.map((item) => `
@@ -186,13 +185,6 @@ function formatUserData(journeyType: string, userData: any): string {
         <p><strong>Skills:</strong> ${userData.skills}</p>
         <p><strong>Available Hours:</strong> ${userData.hoursPerWeek} hours per week</p>
         <p><strong>Business Type:</strong> ${userData.businessType}</p>
-      `;
-    case 'integrate':
-      return `
-        <p><strong>Improvement Area:</strong> ${userData.improvementArea}</p>
-        <p><strong>Volume:</strong> ${userData.volume}</p>
-        <p><strong>Channel:</strong> ${userData.channel}</p>
-        <p><strong>Pain Point:</strong> ${userData.painPoint}</p>
       `;
     default:
       return '';

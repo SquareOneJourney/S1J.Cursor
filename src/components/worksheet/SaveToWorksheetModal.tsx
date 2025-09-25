@@ -9,7 +9,7 @@ interface SaveToWorksheetModalProps {
     title: string;
     description: string;
     type: 'tile' | 'guide' | 'resource';
-    journeyType?: 'explore' | 'start' | 'integrate';
+    journeyType?: 'explore' | 'start';
     level?: number;
   };
 }

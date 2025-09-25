@@ -29,12 +29,6 @@ export function ResultsSummary({ journeyType, userData, result, onBack, onHome }
       button: 'bg-green-600 hover:bg-green-700',
       accent: 'bg-green-50 border-green-200'
     },
-    integrate: {
-      bg: 'bg-gradient-to-br from-orange-50 via-white to-amber-50',
-      primary: 'text-orange-600',
-      button: 'bg-orange-600 hover:bg-orange-700',
-      accent: 'bg-orange-50 border-orange-200'
-    }
   };
 
   const colors = colorScheme[journeyType as keyof typeof colorScheme];

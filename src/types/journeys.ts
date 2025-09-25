@@ -10,12 +10,6 @@ export interface StartData {
   businessType: string;
 }
 
-export interface IntegrateData {
-  improvementArea: string;
-  volume: string;
-  channel: string;
-  painPoint: string;
-}
 
 export interface JourneyResult {
   title: string;

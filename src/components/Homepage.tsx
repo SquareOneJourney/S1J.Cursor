@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Compass, Rocket, Zap, ArrowRight, Clock, TrendingUp } from 'lucide-react';
+import { Compass, Rocket, ArrowRight, Clock, TrendingUp } from 'lucide-react';
 
 export function Homepage() {
   const navigate = useNavigate();
@@ -26,17 +26,6 @@ export function Homepage() {
       iconColor: 'text-green-600',
       stats: '3 levels • 10-45 min each',
       features: ['Business Ideas', 'Branding', 'Marketing Setup']
-    },
-    {
-      id: 'integrate',
-      title: 'Integrate',
-      subtitle: 'For Existing Businesses',
-      description: 'Find AI solutions to streamline your current operations and boost efficiency.',
-      icon: Zap, 
-      color: 'bg-orange-50 border-orange-200 hover:bg-orange-100',
-      iconColor: 'text-orange-600',
-      stats: '3 levels • 15-40 min each',
-      features: ['Workflow Automation', 'Data Analysis', 'Inventory Management']
     }
   ];
 
@@ -64,7 +53,7 @@ export function Homepage() {
         </div>
 
         {/* Journey Tiles */}
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
           {journeys.map((journey) => {
             const IconComponent = journey.icon;
             return (
@@ -133,7 +122,7 @@ export function Homepage() {
                 <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Choose Your Journey</h3>
-              <p className="text-gray-600">Select from Explore, Start, or Integrate based on where you are in your business journey.</p>
+              <p className="text-gray-600">Select from Explore or Start based on where you are in your business journey.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">

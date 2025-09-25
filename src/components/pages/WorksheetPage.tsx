@@ -86,12 +86,6 @@ export function WorksheetPage() {
                 </div>
                 <div className="text-sm text-gray-500">Start Items</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">
-                  {worksheet.items.filter(item => item.journeyType === 'integrate').length}
-                </div>
-                <div className="text-sm text-gray-500">Integrate Items</div>
-              </div>
             </div>
           </div>
         )}
@@ -125,12 +119,6 @@ export function WorksheetPage() {
                 className="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
               >
                 Start Business
-              </button>
-              <button
-                onClick={() => navigate('/integrate')}
-                className="px-6 py-3 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors"
-              >
-                Integrate AI
               </button>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ExternalLink, FileText } from 'lucide-react';
 
 interface ArticlePageProps {
   title: string;
@@ -35,11 +35,15 @@ export function ArticlePage({ title, content, onBack }: ArticlePageProps) {
 }
 
 // Marketing Research Without AI Article Component
-export function MarketingResearchWithoutAI() {
+export function MarketingResearchWithoutAI({ onBack }: { onBack?: () => void } = {}) {
   const navigate = useNavigate();
 
   const handleBackToExplore = () => {
-    navigate('/explore');
+    if (onBack) {
+      onBack();
+    } else {
+      navigate('/explore');
+    }
   };
 
   const handleStartJourney = () => {
@@ -139,28 +143,179 @@ export function MarketingResearchWithoutAI() {
         <h2 className="text-2xl font-bold text-gray-900 mb-4">How Much Does This Cost?</h2>
         
         <div className="mb-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Free Resources:</h3>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>Google Maps</li>
-            <li>Google Search</li>
-            <li>Facebook Groups</li>
-            <li>Community resources & bulletin boards</li>
-            <li>Reddit</li>
-            <li>Local forums</li>
-            <li>Google Trends</li>
-          </ul>
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Free Resources:</h3>
+          <div className="grid gap-4">
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <ExternalLink size={20} className="text-green-500" />
+              </div>
+              <div className="flex-1">
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  Google Maps
+                </a>
+                <p className="text-gray-600 mt-1">Virtual location scouting and competitor research</p>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    tool
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <ExternalLink size={20} className="text-green-500" />
+              </div>
+              <div className="flex-1">
+                <a
+                  href="https://google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  Google Search
+                </a>
+                <p className="text-gray-600 mt-1">Search for competitors and read reviews</p>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    tool
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <ExternalLink size={20} className="text-green-500" />
+              </div>
+              <div className="flex-1">
+                <a
+                  href="https://facebook.com/groups"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  Facebook Groups
+                </a>
+                <p className="text-gray-600 mt-1">Join local community conversations</p>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    tool
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <FileText size={20} className="text-blue-500" />
+              </div>
+              <div className="flex-1">
+                <span className="text-lg font-medium text-gray-700">Community resources & bulletin boards</span>
+                <p className="text-gray-600 mt-1">Local community information sources</p>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    resource
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <ExternalLink size={20} className="text-green-500" />
+              </div>
+              <div className="flex-1">
+                <a
+                  href="https://reddit.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  Reddit
+                </a>
+                <p className="text-gray-600 mt-1">Browse local subreddits for community discussions</p>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    tool
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <FileText size={20} className="text-blue-500" />
+              </div>
+              <div className="flex-1">
+                <span className="text-lg font-medium text-gray-700">Local forums</span>
+                <p className="text-gray-600 mt-1">Community-specific discussion platforms</p>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    resource
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <ExternalLink size={20} className="text-green-500" />
+              </div>
+              <div className="flex-1">
+                <a
+                  href="https://trends.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  Google Trends
+                </a>
+                <p className="text-gray-600 mt-1">Track demand and interest in your area</p>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    tool
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Paid (or Technically Free) Resources:</h3>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li><strong>Google Keyword Planner</strong>
-              <ul className="list-disc list-inside ml-6 mt-1 space-y-1">
-                <li>Requires a Google Ads account</li>
-                <li>No ad spend necessary, but you'll need to provide basic info and a credit card</li>
-              </ul>
-            </li>
-          </ul>
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Paid (or Technically Free) Resources:</h3>
+          <div className="grid gap-4">
+            <div className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0">
+                <ExternalLink size={20} className="text-green-500" />
+              </div>
+              <div className="flex-1">
+                <a
+                  href="https://ads.google.com/home/tools/keyword-planner/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  Google Keyword Planner
+                </a>
+                <p className="text-gray-600 mt-1">Track search volume and demand for specific terms in your area</p>
+                <div className="mt-2 space-y-1">
+                  <p className="text-sm text-gray-500">• Requires a Google Ads account</p>
+                  <p className="text-sm text-gray-500">• No ad spend necessary, but you'll need to provide basic info and a credit card</p>
+                </div>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    tool
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
