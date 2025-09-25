@@ -2,19 +2,16 @@ import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Home, FileText, Menu, X, LogOut } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { LoginModal } from './auth/LoginModal';
-import { SignUpModal } from './auth/SignUpModal';
 
 interface HeaderProps {
-  // No props needed
+  onOpenLogin: () => void;
+  onOpenSignUp: () => void;
 }
 
-export function Header({}: HeaderProps) {
+export function Header({ onOpenLogin, onOpenSignUp }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const { user, signOut } = useAuth();
 
 
@@ -82,13 +79,13 @@ export function Header({}: HeaderProps) {
             ) : (
               <>
                 <button
-                  onClick={() => setIsLoginModalOpen(true)}
+                  onClick={onOpenLogin}
                   className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   Sign In
                 </button>
                 <button
-                  onClick={() => setIsSignUpModalOpen(true)}
+                  onClick={onOpenSignUp}
                   className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
                 >
                   Sign Up
@@ -161,7 +158,7 @@ export function Header({}: HeaderProps) {
                   <>
                     <button
                       onClick={() => {
-                        setIsLoginModalOpen(true);
+                        onOpenLogin();
                         setIsMenuOpen(false);
                       }}
                       className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
@@ -170,7 +167,7 @@ export function Header({}: HeaderProps) {
                     </button>
                     <button
                       onClick={() => {
-                        setIsSignUpModalOpen(true);
+                        onOpenSignUp();
                         setIsMenuOpen(false);
                       }}
                       className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:bg-blue-50"
@@ -185,23 +182,6 @@ export function Header({}: HeaderProps) {
         )}
       </div>
 
-      {/* Auth Modals */}
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={() => setIsLoginModalOpen(false)}
-        onSwitchToSignUp={() => {
-          setIsLoginModalOpen(false);
-          setIsSignUpModalOpen(true);
-        }}
-      />
-      <SignUpModal
-        isOpen={isSignUpModalOpen}
-        onClose={() => setIsSignUpModalOpen(false)}
-        onSwitchToLogin={() => {
-          setIsSignUpModalOpen(false);
-          setIsLoginModalOpen(true);
-        }}
-      />
     </header>
   );
 }
