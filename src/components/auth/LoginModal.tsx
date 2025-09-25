@@ -34,7 +34,7 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100] p-4 overflow-y-auto">
       <div className="bg-white rounded-2xl p-8 max-w-md w-full my-8">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Welcome Back</h2>
