@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { User, Session } from '@supabase/supabase-js'
 import { supabase } from '../lib/supabase'
+import { showWelcomeMessage } from '../api/send-welcome-email'
 
 interface AuthContextType {
   user: User | null
@@ -30,14 +31,43 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Listen for auth changes
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = supabase.auth.onAuthStateChange((event, session) => {
       setSession(session)
       setUser(session?.user ?? null)
       setLoading(false)
+      
+      // Send welcome email for new Google OAuth users
+      if (event === 'SIGNED_IN' && session?.user) {
+        handleNewUserWelcome(session.user)
+      }
     })
 
     return () => subscription.unsubscribe()
   }, [])
+
+  const handleNewUserWelcome = async (user: User) => {
+    try {
+      // Check if this is a new user (created within the last few seconds)
+      const now = new Date()
+      const userCreatedAt = new Date(user.created_at)
+      const timeDiff = now.getTime() - userCreatedAt.getTime()
+      
+      // If user was created within the last 30 seconds, send welcome email
+      if (timeDiff < 30000) {
+        const userData = {
+          email: user.email || '',
+          name: user.user_metadata?.full_name || user.email?.split('@')[0] || 'User',
+          provider: user.app_metadata?.provider || 'email'
+        }
+        
+        // Show welcome message
+        showWelcomeMessage(userData)
+      }
+    } catch (error) {
+      console.log('Welcome email error:', error)
+      // Don't throw error - this shouldn't break the auth flow
+    }
+  }
 
   const signUp = async (email: string, password: string) => {
     const { error } = await supabase.auth.signUp({
