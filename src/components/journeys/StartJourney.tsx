@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProgressBar } from '../ProgressBar';
 import { ResultsSummary } from '../ResultsSummary';
 import { generateStartResult } from '../../utils/aiSimulator';
-import type { StartData } from '../../types/journeys';
+import type { StartData, JourneyResult } from '../../types/journeys';
 
 export function StartJourney() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export function StartJourney() {
     hoursPerWeek: '', 
     businessType: '' 
   });
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<JourneyResult | null>(null);
 
   const totalSteps = 4;
 
@@ -48,8 +48,11 @@ export function StartJourney() {
     if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
     } else {
-      const aiResult = generateStartResult(data);
-      setResult(aiResult);
+      // Avoid setting the same result repeatedly if already set
+      if (!result) {
+        const aiResult = generateStartResult(data);
+        setResult(aiResult);
+      }
     }
   };
 

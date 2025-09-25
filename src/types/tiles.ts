@@ -1,0 +1,32 @@
+export interface Tile {
+  id: string;
+  title: string;
+  description: string;
+  level: number;
+  journeyType: 'explore' | 'start' | 'integrate';
+  parentId?: string; // For nested tiles
+  children?: string[]; // IDs of child tiles
+  content: {
+    type: 'text' | 'video' | 'interactive';
+    data: any;
+  };
+  links: Array<{
+    name: string;
+    url: string;
+    description: string;
+    type: 'article' | 'video' | 'tool' | 'guide';
+  }>;
+  relatedTiles?: string[]; // IDs of related tiles
+  tags: string[];
+  estimatedTime: string; // e.g., "5 minutes", "15 minutes"
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+}
+
+export interface TileCategory {
+  id: string;
+  name: string;
+  description: string;
+  tiles: Tile[];
+  level: number;
+  journeyType: 'explore' | 'start' | 'integrate';
+}
