@@ -14,12 +14,12 @@ interface SaveToWorksheetModalProps {
   };
 }
 
-export function SaveToWorksheetModal({ 
+export const SaveToWorksheetModal = ({ 
   isOpen, 
   onClose, 
   onSave, 
   item 
-}: SaveToWorksheetModalProps) {
+}: SaveToWorksheetModalProps) => {
   const [notes, setNotes] = useState('');
 
   if (!isOpen) return null;
@@ -30,13 +30,29 @@ export function SaveToWorksheetModal({
     onClose();
   };
 
+  const handleClose = () => {
+    onClose();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      handleClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto"
+      onKeyDown={handleKeyDown}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="save-modal-title"
+    >
       <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         {/* Background overlay */}
         <div 
           className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-          onClick={onClose}
+          onClick={handleClose}
         />
 
         {/* Modal panel */}
@@ -45,13 +61,16 @@ export function SaveToWorksheetModal({
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-2">
                 <FileText className="h-6 w-6 text-blue-600" />
-                <h3 className="text-lg font-medium text-gray-900">
-                  Save to Worksheet
-                </h3>
+              <h3 id="save-modal-title" className="text-lg font-medium text-gray-900">
+                Save to Worksheet
+              </h3>
               </div>
               <button
-                onClick={onClose}
+                onClick={handleClose}
+                onKeyDown={(e) => e.key === 'Enter' && handleClose()}
                 className="text-gray-400 hover:text-gray-600"
+                aria-label="Close save modal"
+                tabIndex={0}
               >
                 <X size={24} />
               </button>
@@ -93,6 +112,7 @@ export function SaveToWorksheetModal({
                 placeholder="Add your thoughts, questions, or action items..."
                 rows={4}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                aria-describedby="notes-help"
               />
             </div>
           </div>
@@ -101,14 +121,18 @@ export function SaveToWorksheetModal({
           <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
             <button
               onClick={handleSave}
+              onKeyDown={(e) => e.key === 'Enter' && handleSave()}
               className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+              aria-label="Save item to worksheet"
             >
               <Save size={16} className="mr-2" />
               Save to Worksheet
             </button>
             <button
-              onClick={onClose}
+              onClick={handleClose}
+              onKeyDown={(e) => e.key === 'Enter' && handleClose()}
               className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+              aria-label="Cancel saving to worksheet"
             >
               Cancel
             </button>

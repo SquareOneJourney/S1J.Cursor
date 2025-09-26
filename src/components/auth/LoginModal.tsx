@@ -8,7 +8,7 @@ interface LoginModalProps {
   onSwitchToSignUp: () => void
 }
 
-export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProps) {
+export const LoginModal = ({ isOpen, onClose, onSwitchToSignUp }: LoginModalProps) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -24,10 +24,11 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
     
     if (error) {
       setError(error.message)
-    } else {
-      onClose()
+      setLoading(false)
+      return
     }
     
+    onClose()
     setLoading(false)
   }
 
@@ -40,20 +41,40 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
     if (error) {
       setError(error.message)
       setLoading(false)
+      return
     }
     // Note: If successful, user will be redirected, so we don't need to handle success here
+  }
+
+  const handleClose = () => {
+    onClose()
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      handleClose()
+    }
   }
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100] p-4 overflow-y-auto">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100] p-4 overflow-y-auto"
+      onKeyDown={handleKeyDown}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="login-title"
+    >
       <div className="bg-white rounded-2xl p-8 max-w-md w-full my-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Welcome Back</h2>
+          <h2 id="login-title" className="text-2xl font-bold text-gray-900">Welcome Back</h2>
           <button
-            onClick={onClose}
+            onClick={handleClose}
+            onKeyDown={(e) => e.key === 'Enter' && handleClose()}
             className="text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Close login modal"
+            tabIndex={0}
           >
             <X size={24} />
           </button>
@@ -63,8 +84,10 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
         <button
           type="button"
           onClick={handleGoogleSignIn}
+          onKeyDown={(e) => e.key === 'Enter' && handleGoogleSignIn()}
           disabled={loading}
           className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors mb-6"
+          aria-label="Sign in with Google"
         >
           <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -100,6 +123,8 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your email"
                 required
+                aria-describedby="email-error"
+                autoComplete="email"
               />
             </div>
           </div>
@@ -118,12 +143,19 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your password"
                 required
+                aria-describedby="password-error"
+                autoComplete="current-password"
               />
             </div>
           </div>
 
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+            <div 
+              id="login-error"
+              className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg"
+              role="alert"
+              aria-live="polite"
+            >
               {error}
             </div>
           )}
@@ -132,6 +164,7 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
             type="submit"
             disabled={loading}
             className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+            aria-describedby={error ? "login-error" : undefined}
           >
             {loading ? 'Signing In...' : 'Sign In'}
           </button>
@@ -142,7 +175,10 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
             Don't have an account?{' '}
             <button
               onClick={onSwitchToSignUp}
+              onKeyDown={(e) => e.key === 'Enter' && onSwitchToSignUp()}
               className="text-blue-600 hover:text-blue-800 font-medium"
+              tabIndex={0}
+              aria-label="Switch to sign up form"
             >
               Create one
             </button>
