@@ -41,7 +41,7 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
             <img 
               src="/S1J Logo Transparent.png" 
               alt="SquareOneJourney Logo" 
-              className="w-14 h-14 mr-2"
+              className="w-14 h-14 mr-0"
             />
             <div className="text-2xl font-bold text-blue-600 font-heading">
               SquareOne<span className="text-gray-900">Journey</span>
