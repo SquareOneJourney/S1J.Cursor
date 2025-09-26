@@ -53,9 +53,8 @@ export function Homepage() {
         </div>
 
         {/* Journey Tiles */}
-        <div className="bg-gray-100 rounded-3xl p-6 max-w-4xl mx-auto mb-16">
-          <div className="grid lg:grid-cols-2 gap-6">
-            {journeys.map((journey) => {
+        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+          {journeys.map((journey) => {
               const IconComponent = journey.icon;
               return (
                 <div
@@ -77,7 +76,6 @@ export function Homepage() {
 
                 <div className="text-center">
                   <div className="relative inline-block mb-4">
-                    <div className="w-20 h-20 bg-gray-400 rounded-full absolute -inset-2"></div>
                     <div className={`relative inline-flex items-center justify-center w-10 h-10 ${journey.iconColor} bg-white rounded-full group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                       <IconComponent size={20} />
                     </div>
@@ -117,7 +115,6 @@ export function Homepage() {
               </div>
             );
           })}
-          </div>
         </div>
 
         {/* How it works */}
