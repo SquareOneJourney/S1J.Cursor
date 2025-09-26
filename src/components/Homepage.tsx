@@ -141,6 +141,25 @@ export function Homepage() {
           </div>
         </div>
 
+        {/* About Us Section */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">About Us</h2>
+          <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed space-y-4">
+            <p>
+              We began this journey just like you: with a spark of an idea and a desire to build something of our own. Originally, we wanted to create a small online business, maybe a SaaS product or a simple digital service. But there was a problem: we quickly found ourselves lost in a maze of new, flashy AI tools and tech jargon. There was no straightforward guide, no plain-language explanation, and definitely no one walking us through step by step.
+            </p>
+            <p className="text-center font-bold text-lg">
+              We saw a clear gap. The world didn't need another flashy tool. It needed a straightforward process.
+            </p>
+            <p>
+              Our mission is simple: to provide a guided, no-nonsense platform that helps you move from idea to launch, step by step. We strip away the hype and focus on what works. We're not here to sell you on the magic of AI; we're here to give you a practical path to follow. We've been where you are, and we built the solution we needed.
+            </p>
+            <p className="text-center font-semibold text-lg text-gray-900">
+              It's time to start your next journey…
+            </p>
+          </div>
+        </div>
+
         {/* Footer */}
         <div className="text-center">
           <p className="text-gray-500 mb-4">
