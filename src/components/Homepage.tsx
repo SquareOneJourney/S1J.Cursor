@@ -30,7 +30,7 @@ export function Homepage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#abccc6' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#cfe3df' }}>
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
@@ -238,12 +238,43 @@ export function Homepage() {
           <p className="text-gray-500 mb-4">
             No login required • Get your personalized worksheet • Start in under 5 minutes
           </p>
-          <div className="flex items-center justify-center space-x-6 text-sm text-gray-400">
+          <div className="flex items-center justify-center space-x-6 text-sm text-gray-400 mb-8">
             <span>Interactive Learning</span>
             <span>•</span>
             <span>Personalized Results</span>
             <span>•</span>
             <span>Download & Share</span>
+          </div>
+          
+          {/* Legal Footer */}
+          <div className="bg-white rounded-2xl shadow-lg p-6">
+            <p className="text-gray-600 mb-4">© 2025 Ideabrowser. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <button
+                onClick={() => navigate('/terms')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Terms and Conditions
+              </button>
+              <button
+                onClick={() => navigate('/privacy')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Privacy Policy
+              </button>
+              <button
+                onClick={() => navigate('/data-protection')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Data Protection
+              </button>
+              <button
+                onClick={() => navigate('/disclaimer')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Disclaimer
+              </button>
+            </div>
           </div>
         </div>
       </div>

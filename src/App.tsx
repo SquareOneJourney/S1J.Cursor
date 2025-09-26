@@ -12,6 +12,10 @@ import { ExploreJourney } from './components/journeys/ExploreJourney';
 import { StartJourney } from './components/journeys/StartJourney';
 import { LoginModal } from './components/auth/LoginModal';
 import { SignUpModal } from './components/auth/SignUpModal';
+import { TermsAndConditions } from './components/pages/TermsAndConditions';
+import { PrivacyPolicy } from './components/pages/PrivacyPolicy';
+import { DataProtection } from './components/pages/DataProtection';
+import { Disclaimer } from './components/pages/Disclaimer';
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -33,6 +37,11 @@ function App() {
                 <Route path="/start" element={<TileJourney />} />
                 <Route path="/worksheet" element={<WorksheetPage />} />
                 <Route path="/article/marketing-research-without-ai" element={<MarketingResearchWithoutAI />} />
+                {/* Legal pages */}
+                <Route path="/terms" element={<TermsAndConditions />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/data-protection" element={<DataProtection />} />
+                <Route path="/disclaimer" element={<Disclaimer />} />
                 {/* Legacy routes for backward compatibility */}
                 <Route path="/explore-legacy" element={<ExploreJourney />} />
                 <Route path="/start-legacy" element={<StartJourney />} />
