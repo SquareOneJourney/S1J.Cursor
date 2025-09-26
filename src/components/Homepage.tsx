@@ -30,7 +30,7 @@ export function Homepage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen" style={{ backgroundColor: '#abccc6' }}>
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
@@ -53,15 +53,16 @@ export function Homepage() {
         </div>
 
         {/* Journey Tiles */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-          {journeys.map((journey) => {
-            const IconComponent = journey.icon;
-            return (
-              <div
-                key={journey.id}
-                className={`${journey.color} border-2 rounded-2xl p-8 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 group relative overflow-hidden`}
-                onClick={() => navigate(`/${journey.id}`)}
-              >
+        <div className="bg-gray-100 rounded-3xl p-6 max-w-4xl mx-auto mb-16">
+          <div className="grid lg:grid-cols-2 gap-6">
+            {journeys.map((journey) => {
+              const IconComponent = journey.icon;
+              return (
+                <div
+                  key={journey.id}
+                  className={`${journey.color} border-2 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 group relative overflow-hidden`}
+                  onClick={() => navigate(`/${journey.id}`)}
+                >
                 {/* Level indicators */}
                 <div className="absolute top-4 right-4 flex space-x-1">
                   {[1, 2, 3].map((level)  => (
@@ -75,42 +76,43 @@ export function Homepage() {
                 </div>
 
                 <div className="text-center">
-                  <div className={`inline-flex items-center justify-center w-20 h-20 ${journey.iconColor} bg-white rounded-full mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <IconComponent size={40} />
+                  <div className={`inline-flex items-center justify-center w-16 h-16 ${journey.iconColor} bg-white rounded-full mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <IconComponent size={32} />
                   </div>
                   
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2 font-heading">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2 font-heading">
                     {journey.title}
                   </h2>
                   
-                  <div className={`text-lg font-semibold ${journey.iconColor} mb-4 font-heading`}>
+                  <div className={`text-base font-semibold ${journey.iconColor} mb-3 font-heading`}>
                     {journey.subtitle}
                   </div>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed text-lg font-serif">
+                  <p className="text-gray-600 mb-4 leading-relaxed text-base font-serif">
                     {journey.description}
                   </p>
 
                   {/* Features */}
-                  <div className="mb-6">
-                    <div className="text-sm text-gray-500 mb-3">{journey.stats}</div>
-                    <div className="space-y-2">
+                  <div className="mb-4">
+                    <div className="text-xs text-gray-500 mb-2">{journey.stats}</div>
+                    <div className="space-y-1">
                       {journey.features.map((feature, index) => (
-                        <div key={index} className="text-sm text-gray-700 bg-white/50 rounded-full px-3 py-1">
+                        <div key={index} className="text-xs text-gray-700 bg-white/50 rounded-full px-2 py-1">
                           {feature}
                         </div>
                       ))}
                     </div>
                   </div>
                   
-                  <div className={`inline-flex items-center ${journey.iconColor} font-semibold text-lg group-hover:gap-3 gap-2 transition-all duration-300`}>
+                  <div className={`inline-flex items-center ${journey.iconColor} font-semibold text-base group-hover:gap-3 gap-2 transition-all duration-300`}>
                     Start Journey
-                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
             );
           })}
+          </div>
         </div>
 
         {/* How it works */}

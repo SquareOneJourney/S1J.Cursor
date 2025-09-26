@@ -44,7 +44,9 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
               className="w-16 h-16 mr-0"
             />
             <div className="text-lg font-bold text-brand-green font-banner">
-              SquareOneJourney
+              <span className="text-xl">Square</span>
+              <span className="text-lg">One</span>
+              <span className="text-xl">Journey</span>
             </div>
           </div>
 
