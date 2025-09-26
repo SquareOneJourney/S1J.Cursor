@@ -248,7 +248,7 @@ export function Homepage() {
           
           {/* Legal Footer */}
           <div className="bg-white rounded-2xl shadow-lg p-6">
-            <p className="text-gray-600 mb-4">© 2025 Ideabrowser. All rights reserved.</p>
+            <p className="text-gray-600 mb-4">© 2025 SquareOneJourney. All rights reserved.</p>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <button
                 onClick={() => navigate('/terms')}
