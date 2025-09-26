@@ -38,6 +38,11 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
             role="button"
             aria-label="Go to homepage"
           >
+            <img 
+              src="/logo.svg" 
+              alt="SquareOneJourney Logo" 
+              className="w-10 h-10 mr-3"
+            />
             <div className="text-2xl font-bold text-blue-600 font-heading">
               SquareOne<span className="text-gray-900">Journey</span>
             </div>

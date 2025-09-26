@@ -1,0 +1,21 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Octagonal background -->
+  <defs>
+    <linearGradient id="octagonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Octagon shape -->
+  <path d="M20 2L32.36 7.64L38 20L32.36 32.36L20 38L7.64 32.36L2 20L7.64 7.64L20 2Z" fill="url(#octagonGradient)" stroke="#1E40AF" stroke-width="0.5"/>
+  
+  <!-- Letter S -->
+  <path d="M12 12C12 10, 13 8, 15 8C17 8, 18 9, 18 11C18 12, 17 13, 16 13C15 13, 14 12, 14 11M14 11C14 9, 15 8, 17 8C19 8, 20 9, 20 11C20 13, 19 14, 17 14C15 14, 14 13, 14 11" 
+        stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Letter J -->
+  <path d="M22 8V20C22 22, 24 24, 26 24C28 24, 30 22, 30 20M30 20V8" 
+        stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
