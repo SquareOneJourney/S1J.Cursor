@@ -39,7 +39,7 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
             aria-label="Go to homepage"
           >
             <img 
-              src="/S1J Logo Transparent.png" 
+              src="/S1J Logo Final.png" 
               alt="SquareOneJourney Logo" 
               className="w-14 h-14 mr-0"
             />
