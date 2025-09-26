@@ -229,38 +229,38 @@ export function Homepage() {
             </a>
           </div>
         </div>
+      </div>
 
-        {/* Footer */}
-        <div className="bg-white/95 backdrop-blur-sm border-t border-gray-200 mt-16">
-          <div className="max-w-7xl mx-auto px-4 py-6">
-            <div className="text-center">
-              <p className="text-gray-600 mb-4">© 2025 SquareOneJourney. All rights reserved.</p>
-              <div className="flex flex-wrap justify-center gap-6 text-sm">
-                <button
-                  onClick={() => navigate('/terms')}
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  Terms and Conditions
-                </button>
-                <button
-                  onClick={() => navigate('/privacy')}
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  Privacy Policy
-                </button>
-                <button
-                  onClick={() => navigate('/data-protection')}
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  Data Protection
-                </button>
-                <button
-                  onClick={() => navigate('/disclaimer')}
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  Disclaimer
-                </button>
-              </div>
+      {/* Footer */}
+      <div className="bg-white/95 backdrop-blur-sm border-t border-gray-200 mt-16">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="text-center">
+            <p className="text-gray-600 mb-4">© 2025 SquareOneJourney. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <button
+                onClick={() => navigate('/terms')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Terms and Conditions
+              </button>
+              <button
+                onClick={() => navigate('/privacy')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Privacy Policy
+              </button>
+              <button
+                onClick={() => navigate('/data-protection')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Data Protection
+              </button>
+              <button
+                onClick={() => navigate('/disclaimer')}
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Disclaimer
+              </button>
             </div>
           </div>
         </div>
