@@ -19,13 +19,13 @@ export function Homepage() {
     {
       id: 'start',
       title: 'Start',
-      subtitle: 'For New Businesses',
-      description: 'Get a personalized business idea and launch plan powered by AI market insights.',
+      subtitle: 'Let the Journey Begin',
+      description: 'Dive deeper into the "how" AI can improve your business and how it\'s worth your actual time.',
       icon: Rocket,
       color: 'bg-green-50 border-green-200 hover:bg-green-100',
       iconColor: 'text-green-600',
-      stats: '3 levels • 10-45 min each',
-      features: ['Business Ideas', 'Branding', 'Marketing Setup']
+      stats: '',
+      features: ['AI Tools', 'Instruction Guides', 'Tailored Recommendations']
     }
   ];
 
