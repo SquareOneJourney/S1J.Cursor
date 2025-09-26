@@ -9,12 +9,12 @@ export function Homepage() {
       id: 'explore',
       title: 'Explore',
       subtitle: 'For the AI-Curious',
-      description: 'Discover what AI can do for your business with interactive demos and practical examples.',
+      description: 'Discover what AI can do for your business and why it\'s worth your time.',
       icon: Compass,
       color: 'bg-blue-50 border-blue-200 hover:bg-blue-100',
       iconColor: 'text-blue-600',
-      stats: '3 levels • 5-20 min each',
-      features: ['AI Basics', 'Content Generation', 'Customer Service']
+      stats: '',
+      features: ['AI Basics', 'General Information']
     },
     {
       id: 'start',
@@ -30,7 +30,7 @@ export function Homepage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#cfe3df' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#e9f2f0' }}>
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
@@ -76,8 +76,11 @@ export function Homepage() {
                 </div>
 
                 <div className="text-center">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${journey.iconColor} bg-white rounded-full mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <IconComponent size={32} />
+                  <div className="relative inline-block mb-4">
+                    <div className="w-20 h-20 bg-gray-400 rounded-full absolute -inset-2"></div>
+                    <div className={`relative inline-flex items-center justify-center w-10 h-10 ${journey.iconColor} bg-white rounded-full group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <IconComponent size={20} />
+                    </div>
                   </div>
                   
                   <h2 className="text-2xl font-bold text-gray-900 mb-2 font-heading">
@@ -94,7 +97,9 @@ export function Homepage() {
 
                   {/* Features */}
                   <div className="mb-4">
-                    <div className="text-xs text-gray-500 mb-2">{journey.stats}</div>
+                    {journey.stats && (
+                      <div className="text-xs text-gray-500 mb-2">{journey.stats}</div>
+                    )}
                     <div className="space-y-1">
                       {journey.features.map((feature, index) => (
                         <div key={index} className="text-xs text-gray-700 bg-white/50 rounded-full px-2 py-1">
