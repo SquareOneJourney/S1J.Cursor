@@ -30,7 +30,7 @@ export function Homepage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#e9f2f0' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#f2f1f0' }}>
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
