@@ -86,7 +86,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }: SignUpModalPro
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-8 h-8 text-green-600" />
             </div>
-            <h2 id="success-title" className="text-2xl font-bold text-gray-900 mb-2">Check Your Email</h2>
+            <h2 id="success-title" className="text-2xl font-bold text-gray-900 mb-2 font-heading">Check Your Email</h2>
             <p className="text-gray-600 mb-6">
               We've sent you a confirmation link. Please check your email and click the link to verify your account.
             </p>
@@ -114,7 +114,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }: SignUpModalPro
     >
       <div className="bg-white rounded-2xl p-8 max-w-md w-full my-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 id="signup-title" className="text-2xl font-bold text-gray-900">Create Account</h2>
+          <h2 id="signup-title" className="text-2xl font-bold text-gray-900 font-heading">Create Account</h2>
           <button
             onClick={handleClose}
             onKeyDown={(e) => e.key === 'Enter' && handleClose()}

@@ -34,11 +34,11 @@ export function Homepage() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <h1 className="text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-6xl font-bold text-gray-900 mb-6 font-heading">
             Start at <span className="text-blue-600">SquareOne</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-          A small business resource built for you with step-by-step guides to help you learn AI and grow your business.
+          <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto font-serif">
+          A small business resource built for you. Explore our step-by-step guides to help you learn AI and grow your business.
           </p>
           <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 font-medium">
             <div className="flex items-center">
@@ -64,7 +64,7 @@ export function Homepage() {
               >
                 {/* Level indicators */}
                 <div className="absolute top-4 right-4 flex space-x-1">
-                  {[1, 2, 3].map((level) => (
+                  {[1, 2, 3].map((level)  => (
                     <div
                       key={level}
                       className={`w-2 h-2 rounded-full ${
@@ -79,15 +79,15 @@ export function Homepage() {
                     <IconComponent size={40} />
                   </div>
                   
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-2 font-heading">
                     {journey.title}
                   </h2>
                   
-                  <div className={`text-lg font-semibold ${journey.iconColor} mb-4`}>
+                  <div className={`text-lg font-semibold ${journey.iconColor} mb-4 font-heading`}>
                     {journey.subtitle}
                   </div>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+                  <p className="text-gray-600 mb-6 leading-relaxed text-lg font-serif">
                     {journey.description}
                   </p>
 

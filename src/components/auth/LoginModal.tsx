@@ -68,7 +68,7 @@ export const LoginModal = ({ isOpen, onClose, onSwitchToSignUp }: LoginModalProp
     >
       <div className="bg-white rounded-2xl p-8 max-w-md w-full my-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 id="login-title" className="text-2xl font-bold text-gray-900">Welcome Back</h2>
+          <h2 id="login-title" className="text-2xl font-bold text-gray-900 font-heading">Welcome Back</h2>
           <button
             onClick={handleClose}
             onKeyDown={(e) => e.key === 'Enter' && handleClose()}

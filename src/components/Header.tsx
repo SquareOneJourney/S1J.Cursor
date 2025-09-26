@@ -38,7 +38,7 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
             role="button"
             aria-label="Go to homepage"
           >
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-2xl font-bold text-blue-600 font-heading">
               SquareOne<span className="text-gray-900">Journey</span>
             </div>
           </div>
