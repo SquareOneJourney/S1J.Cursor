@@ -21,13 +21,6 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
   }
 
 
-  const getJourneyTypeColor = (journeyType: string) => {
-    switch (journeyType) {
-      case 'explore': return 'bg-blue-100 text-blue-800';
-      case 'start': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
 
   const handleSaveToWorksheet = (notes: string) => {
     onSaveToWorksheet(tile, notes);
@@ -179,9 +172,6 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
             <div className="flex-1">
               <div className="flex items-center space-x-3 mb-3">
                 <h1 className="text-3xl font-bold text-gray-900">{tile.title}</h1>
-                <span className={`text-sm px-3 py-1 rounded-full ${getJourneyTypeColor(tile.journeyType)}`}>
-                  Level {tile.level}
-                </span>
               </div>
               <p className="text-xl text-gray-600 mb-4">{tile.description}</p>
               
@@ -328,8 +318,7 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
           title: tile.title,
           description: tile.description,
           type: 'tile',
-          journeyType: tile.journeyType,
-          level: tile.level
+          journeyType: tile.journeyType
         }}
       />
     </>
