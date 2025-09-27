@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Compass, Rocket, ArrowRight, Clock, TrendingUp, Search } from 'lucide-react';
+import { Compass, Rocket, ArrowRight, Clock, TrendingUp } from 'lucide-react';
 
 export function Homepage() {
   const navigate = useNavigate();
@@ -35,39 +35,23 @@ export function Homepage() {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-6xl font-bold text-gray-900 mb-6 font-heading">
-            Start at <span className="text-blue-600">SquareOne</span>
+Start at <span className="text-blue-600">SquareOne</span> <span className="text-green-600">Simulator</span>
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto font-serif">
-          A small business resource built for you. Explore our step-by-step guides to help you learn AI and grow your business.
+A comprehensive business simulator that helps you explore AI tools, test business ideas, and build your entrepreneurial journey with hands-on practice.
           </p>
           <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 font-medium">
             <div className="flex items-center">
               <Clock size={16} className="mr-2" />
-              Self-paced learning
+              Interactive simulation
             </div>
             <div className="flex items-center">
               <TrendingUp size={16} className="mr-2" />
-              It's time for your next journey
+              Real-world practice
             </div>
           </div>
         </div>
 
-        {/* SEO Research Section */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">SEO Research Tools</h2>
-          <div className="text-center mb-6">
-            <p className="text-gray-600 mb-4">
-              Discover keywords, analyze competitors, and find niche content to boost your business visibility.
-            </p>
-            <button
-              onClick={() => navigate('/seo')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              <Search size={20} />
-              Start SEO Research
-            </button>
-          </div>
-        </div>
 
         {/* Journey Tiles */}
         <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
