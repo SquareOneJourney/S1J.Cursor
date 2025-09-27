@@ -69,33 +69,50 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
           const sections = text.split('\n\n');
           
           return sections.map((section, index) => {
-            // Handle headers
-            if (section.startsWith('## ')) {
+            // Handle main title
+            if (section.startsWith('# ')) {
               return (
-                <h2 key={index} className="text-xl font-bold text-gray-900 mt-6 mb-3 first:mt-0">
-                  {section.replace('## ', '')}
-                </h2>
+                <h1 key={index} className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                  {section.replace('# ', '')}
+                </h1>
               );
             }
             
-            // Handle bold text
+            // Handle section headers (numbered examples)
+            if (section.startsWith('## ')) {
+              return (
+                <div key={index} className="mt-8 mb-6 first:mt-0">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-200 pb-2">
+                    {section.replace('## ', '')}
+                  </h2>
+                </div>
+              );
+            }
+            
+            // Handle bold text (Example: and Prompt: labels)
             if (section.includes('**')) {
               const parts = section.split(/(\*\*.*?\*\*)/g);
               return (
-                <p key={index} className="text-gray-700 leading-relaxed mb-4">
-                  {parts.map((part, partIndex) => {
-                    if (part.startsWith('**') && part.endsWith('**')) {
-                      return <strong key={partIndex} className="font-semibold text-gray-900">{part.slice(2, -2)}</strong>;
-                    }
-                    return part;
-                  })}
-                </p>
+                <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg border-l-4 border-blue-300">
+                  <div className="text-gray-800 leading-relaxed">
+                    {parts.map((part, partIndex) => {
+                      if (part.startsWith('**') && part.endsWith('**')) {
+                        return (
+                          <span key={partIndex} className="font-bold text-blue-700 text-lg">
+                            {part.slice(2, -2)}
+                          </span>
+                        );
+                      }
+                      return <span key={partIndex}>{part}</span>;
+                    })}
+                  </div>
+                </div>
               );
             }
             
             // Regular paragraphs
             return (
-              <p key={index} className="text-gray-700 leading-relaxed mb-4">
+              <p key={index} className="text-gray-700 leading-relaxed mb-6 text-lg">
                 {section}
               </p>
             );
