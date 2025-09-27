@@ -1,4 +1,4 @@
-import { Search, Brain, Calendar, PenTool, MessageCircle, TrendingUp, HelpCircle, Building2, Play, Rocket } from 'lucide-react';
+import { Search, Brain, Calendar, PenTool, MessageCircle, TrendingUp, HelpCircle, Building2, Play, Rocket, Image } from 'lucide-react';
 import type { Tile } from '../../types/tiles';
 
 interface TileCardProps {
@@ -51,6 +51,8 @@ export function TileCard({ tile, onNavigate }: TileCardProps) {
         return <PenTool className="w-8 h-8 text-green-600" />;
       case 'start-marketing-setup':
         return <TrendingUp className="w-8 h-8 text-green-600" />;
+      case 'start-ai-image-editor':
+        return <Image className="w-8 h-8 text-green-600" />;
       default:
         return <Brain className="w-8 h-8 text-gray-600" />;
     }
