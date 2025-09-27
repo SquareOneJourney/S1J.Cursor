@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowLeft, Clock, Bookmark, ExternalLink, Play, FileText, ArrowRight } from 'lucide-react';
 import { SaveToWorksheetModal } from '../worksheet/SaveToWorksheetModal';
 import { MarketingResearchWithoutAI } from '../pages/ArticlePage';
+import { tiles } from '../../data/tiles';
 import type { Tile } from '../../types/tiles';
 
 interface TileDetailProps {
@@ -181,6 +182,34 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* Child Tiles */}
+        {tile.children && tile.children.length > 0 && (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Explore More</h2>
+            <div className="grid gap-3">
+              {tile.children.map((childTileId) => {
+                const childTile = tiles.find(t => t.id === childTileId);
+                if (!childTile) return null;
+                return (
+                  <div key={childTileId} className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border border-blue-200">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-gray-900 mb-1">{childTile.title}</h3>
+                      <p className="text-sm text-gray-600">{childTile.description}</p>
+                    </div>
+                    <button
+                      onClick={() => onNavigateToTile(childTileId)}
+                      className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Explore
+                      <ArrowRight size={16} className="ml-1" />
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}

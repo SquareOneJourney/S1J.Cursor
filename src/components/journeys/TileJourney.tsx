@@ -21,7 +21,7 @@ export function TileJourney() {
     return null;
   }
 
-  const journeyTiles = tiles.filter(tile => tile.journeyType === journeyType);
+  const journeyTiles = tiles.filter(tile => tile.journeyType === journeyType && !tile.parentId);
   const journeyCategories = tileCategories.filter(cat => cat.journeyType === journeyType);
 
   const handleSaveToWorksheet = (tile: Tile, notes: string) => {
