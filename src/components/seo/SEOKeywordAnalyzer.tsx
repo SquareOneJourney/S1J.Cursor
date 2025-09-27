@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { Search, TrendingUp, Target, DollarSign, Users, BarChart3, Loader2 } from 'lucide-react';
-import { firecrawlSEOAnalyzer } from '../../lib/firecrawl';
-import { SEOKeywordData } from '../../lib/schemas';
+import { seoResearchTools, SEOKeywordData } from '../../lib/seo-tools';
 
 interface SEOKeywordAnalyzerProps {
   onKeywordsFound?: (keywords: SEOKeywordData[]) => void;
 }
 
 export const SEOKeywordAnalyzer: React.FC<SEOKeywordAnalyzerProps> = ({ onKeywordsFound }) => {
-  const [url, setUrl] = useState('');
+  const [seedKeyword, setSeedKeyword] = useState('');
   const [keywords, setKeywords] = useState<SEOKeywordData[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleAnalyze = async () => {
-    if (!url.trim()) {
-      setError('Please enter a valid URL');
+    if (!seedKeyword.trim()) {
+      setError('Please enter a keyword to research');
       return;
     }
 
@@ -23,12 +22,12 @@ export const SEOKeywordAnalyzer: React.FC<SEOKeywordAnalyzerProps> = ({ onKeywor
     setError(null);
 
     try {
-      const results = await firecrawlSEOAnalyzer.extractSEOKeywords(url);
+      const results = await seoResearchTools.generateKeywordSuggestions(seedKeyword);
       setKeywords(results);
       onKeywordsFound?.(results);
     } catch (err) {
-      setError('Failed to analyze keywords. Please check your URL and try again.');
-      console.error('SEO analysis error:', err);
+      setError('Failed to generate keyword suggestions. Please try again.');
+      console.error('Keyword analysis error:', err);
     } finally {
       setLoading(false);
     }
@@ -58,23 +57,23 @@ export const SEOKeywordAnalyzer: React.FC<SEOKeywordAnalyzerProps> = ({ onKeywor
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center">
           <Search className="mr-3 text-blue-600" size={32} />
-          SEO Keyword Analyzer
+          SEO Keyword Research
         </h2>
         <p className="text-gray-600 mb-6">
-          Analyze any website to discover SEO keywords, search volume, competition levels, and search intent.
+          Enter a seed keyword to discover related keywords, search volumes, and competition levels.
         </p>
 
         <div className="flex gap-4 mb-6">
           <input
-            type="url"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            placeholder="Enter website URL (e.g., https://example.com)"
+            type="text"
+            value={seedKeyword}
+            onChange={(e) => setSeedKeyword(e.target.value)}
+            placeholder="Enter a keyword (e.g., 'AI automation', 'small business tools')"
             className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <button
             onClick={handleAnalyze}
-            disabled={loading || !url.trim()}
+            disabled={loading || !seedKeyword.trim()}
             className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {loading ? (
@@ -82,7 +81,7 @@ export const SEOKeywordAnalyzer: React.FC<SEOKeywordAnalyzerProps> = ({ onKeywor
             ) : (
               <Search size={20} />
             )}
-            {loading ? 'Analyzing...' : 'Analyze'}
+            {loading ? 'Researching...' : 'Research Keywords'}
           </button>
         </div>
 
@@ -97,15 +96,15 @@ export const SEOKeywordAnalyzer: React.FC<SEOKeywordAnalyzerProps> = ({ onKeywor
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-semibold text-gray-900">
-              Discovered Keywords ({keywords.length})
+              Keyword Suggestions ({keywords.length})
             </h3>
             <div className="text-sm text-gray-500">
-              Sorted by relevance and search volume
+              Based on your seed keyword: "{seedKeyword}"
             </div>
           </div>
 
           <div className="grid gap-4">
-            {keywords.slice(0, 20).map((keyword, index) => (
+            {keywords.map((keyword, index) => (
               <div
                 key={index}
                 className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
@@ -173,12 +172,6 @@ export const SEOKeywordAnalyzer: React.FC<SEOKeywordAnalyzerProps> = ({ onKeywor
               </div>
             ))}
           </div>
-
-          {keywords.length > 20 && (
-            <div className="text-center text-gray-500 text-sm">
-              Showing top 20 keywords out of {keywords.length} total
-            </div>
-          )}
         </div>
       )}
     </div>

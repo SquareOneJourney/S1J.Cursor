@@ -3,7 +3,7 @@ import { SEOKeywordAnalyzer } from './SEOKeywordAnalyzer';
 import { CompetitorAnalyzer } from './CompetitorAnalyzer';
 import { NicheContentFinder } from './NicheContentFinder';
 import { Search, Building2, FileText, BarChart3, TrendingUp, Target } from 'lucide-react';
-import { SEOKeywordData, CompetitorData, NicheContentData } from '../../lib/schemas';
+import { SEOKeywordData, CompetitorData, NicheContent } from '../../lib/seo-tools';
 
 type TabType = 'keywords' | 'competitors' | 'content';
 
@@ -11,7 +11,7 @@ export const SEODashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('keywords');
   const [keywords, setKeywords] = useState<SEOKeywordData[]>([]);
   const [competitors, setCompetitors] = useState<CompetitorData[]>([]);
-  const [content, setContent] = useState<NicheContentData[]>([]);
+  const [content, setContent] = useState<NicheContent[]>([]);
 
   const tabs = [
     {
@@ -28,9 +28,9 @@ export const SEODashboard: React.FC = () => {
     },
     {
       id: 'content' as TabType,
-      label: 'Niche Content',
+      label: 'Content Ideas',
       icon: FileText,
-      description: 'Find trending content in your industry'
+      description: 'Find content ideas and trending topics'
     }
   ];
 
@@ -42,7 +42,7 @@ export const SEODashboard: React.FC = () => {
     setCompetitors(prev => [competitor, ...prev.filter(c => c.domain !== competitor.domain)]);
   };
 
-  const handleContentFound = (foundContent: NicheContentData[]) => {
+  const handleContentFound = (foundContent: NicheContent[]) => {
     setContent(foundContent);
   };
 
@@ -74,7 +74,7 @@ export const SEODashboard: React.FC = () => {
             SEO Research <span className="text-blue-600">Dashboard</span>
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto font-serif">
-            Discover keywords, analyze competitors, and find niche content to boost your SEO strategy.
+            Discover keywords, analyze competitors, and find content ideas to boost your SEO strategy.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export const SEODashboard: React.FC = () => {
             <div className="bg-white rounded-lg p-6 shadow-lg">
               <div className="flex items-center gap-3 mb-2">
                 <TrendingUp className="text-orange-600" size={24} />
-                <h3 className="font-semibold text-gray-900">Content Found</h3>
+                <h3 className="font-semibold text-gray-900">Content Ideas</h3>
               </div>
               <div className="text-3xl font-bold text-orange-600">{content.length}</div>
               <div className="text-sm text-gray-600">

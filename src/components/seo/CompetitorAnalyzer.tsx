@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Building2, Globe, Users, Calendar, Share2, ExternalLink, Loader2, TrendingUp, Link as LinkIcon } from 'lucide-react';
-import { firecrawlSEOAnalyzer } from '../../lib/firecrawl';
-import { CompetitorData } from '../../lib/schemas';
+import { seoResearchTools, CompetitorData } from '../../lib/seo-tools';
 
 interface CompetitorAnalyzerProps {
   onCompetitorAnalyzed?: (competitor: CompetitorData) => void;
@@ -15,7 +14,7 @@ export const CompetitorAnalyzer: React.FC<CompetitorAnalyzerProps> = ({ onCompet
 
   const handleAnalyze = async () => {
     if (!domain.trim()) {
-      setError('Please enter a valid domain');
+      setError('Please enter a domain to analyze');
       return;
     }
 
@@ -23,11 +22,11 @@ export const CompetitorAnalyzer: React.FC<CompetitorAnalyzerProps> = ({ onCompet
     setError(null);
 
     try {
-      const result = await firecrawlSEOAnalyzer.analyzeCompetitor(domain);
+      const result = await seoResearchTools.analyzeCompetitor(domain);
       setCompetitor(result);
       onCompetitorAnalyzed?.(result);
     } catch (err) {
-      setError('Failed to analyze competitor. Please check your domain and try again.');
+      setError('Failed to analyze competitor. Please try again.');
       console.error('Competitor analysis error:', err);
     } finally {
       setLoading(false);
@@ -51,10 +50,10 @@ export const CompetitorAnalyzer: React.FC<CompetitorAnalyzerProps> = ({ onCompet
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center">
           <Building2 className="mr-3 text-green-600" size={32} />
-          Competitor Analyzer
+          Competitor Analysis
         </h2>
         <p className="text-gray-600 mb-6">
-          Analyze competitor websites to understand their SEO strategy, content approach, and market positioning.
+          Analyze competitor websites to understand their strategy and identify opportunities.
         </p>
 
         <div className="flex gap-4 mb-6">
@@ -75,7 +74,7 @@ export const CompetitorAnalyzer: React.FC<CompetitorAnalyzerProps> = ({ onCompet
             ) : (
               <Building2 size={20} />
             )}
-            {loading ? 'Analyzing...' : 'Analyze'}
+            {loading ? 'Analyzing...' : 'Analyze Competitor'}
           </button>
         </div>
 

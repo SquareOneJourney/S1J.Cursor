@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { Search, FileText, Calendar, User, MessageSquare, Heart, Share2, Loader2, TrendingUp, BookOpen } from 'lucide-react';
-import { firecrawlSEOAnalyzer } from '../../lib/firecrawl';
-import { NicheContentData } from '../../lib/schemas';
+import { seoResearchTools, NicheContent } from '../../lib/seo-tools';
 
 interface NicheContentFinderProps {
-  onContentFound?: (content: NicheContentData[]) => void;
+  onContentFound?: (content: NicheContent[]) => void;
 }
 
 export const NicheContentFinder: React.FC<NicheContentFinderProps> = ({ onContentFound }) => {
   const [topics, setTopics] = useState('');
-  const [content, setContent] = useState<NicheContentData[]>([]);
+  const [content, setContent] = useState<NicheContent[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -24,7 +23,7 @@ export const NicheContentFinder: React.FC<NicheContentFinderProps> = ({ onConten
 
     try {
       const topicList = topics.split(',').map(t => t.trim()).filter(t => t.length > 0);
-      const results = await firecrawlSEOAnalyzer.findNicheContent(topicList, 10);
+      const results = await seoResearchTools.findNicheContent(topicList);
       setContent(results);
       onContentFound?.(results);
     } catch (err) {
@@ -62,10 +61,10 @@ export const NicheContentFinder: React.FC<NicheContentFinderProps> = ({ onConten
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center">
           <Search className="mr-3 text-purple-600" size={32} />
-          Niche Content Finder
+          Niche Content Discovery
         </h2>
         <p className="text-gray-600 mb-6">
-          Discover trending content, articles, and discussions in your niche to stay ahead of the competition.
+          Discover content ideas and trending topics in your niche to inspire your own content strategy.
         </p>
 
         <div className="flex gap-4 mb-6">
@@ -73,7 +72,7 @@ export const NicheContentFinder: React.FC<NicheContentFinderProps> = ({ onConten
             type="text"
             value={topics}
             onChange={(e) => setTopics(e.target.value)}
-            placeholder="Enter topics (comma-separated): AI tools, small business, automation"
+            placeholder="Enter topics (comma-separated): AI automation, small business, digital marketing"
             className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
           />
           <button
@@ -101,10 +100,10 @@ export const NicheContentFinder: React.FC<NicheContentFinderProps> = ({ onConten
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-semibold text-gray-900">
-              Found Content ({content.length})
+              Content Ideas ({content.length})
             </h3>
             <div className="text-sm text-gray-500">
-              Sorted by relevance and engagement
+              Based on your topics: {topics}
             </div>
           </div>
 
@@ -205,7 +204,7 @@ export const NicheContentFinder: React.FC<NicheContentFinderProps> = ({ onConten
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
                   >
                     <BookOpen size={16} />
-                    Read Full Article
+                    View Content Idea
                   </a>
                   <div className="text-sm text-gray-500">
                     Readability: {item.readabilityScore}/100
@@ -220,9 +219,9 @@ export const NicheContentFinder: React.FC<NicheContentFinderProps> = ({ onConten
       {content.length === 0 && !loading && (
         <div className="text-center py-12">
           <Search className="mx-auto text-gray-400 mb-4" size={48} />
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">No Content Found</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">No Content Ideas Found</h3>
           <p className="text-gray-600">
-            Try different topics or keywords to find relevant content in your niche.
+            Try different topics or keywords to find relevant content ideas in your niche.
           </p>
         </div>
       )}
