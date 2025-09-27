@@ -64,7 +64,7 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
             // Handle main title
             if (section.startsWith('# ')) {
               return (
-                <h1 key={index} className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                <h1 key={index} className="text-3xl font-bold text-gray-900 mb-8 text-center font-heading">
                   {section.replace('# ', '')}
                 </h1>
               );
@@ -74,7 +74,7 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
             if (section.startsWith('## ')) {
               return (
                 <div key={index} className="mt-8 mb-6 first:mt-0">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-200 pb-2">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-200 pb-2 font-heading">
                     {section.replace('## ', '')}
                   </h2>
                 </div>
@@ -86,11 +86,11 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
               const parts = section.split(/(\*\*.*?\*\*)/g);
               return (
                 <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg border-l-4 border-blue-300">
-                  <div className="text-gray-800 leading-relaxed">
+                  <div className="text-gray-800 leading-relaxed font-serif">
                     {parts.map((part, partIndex) => {
                       if (part.startsWith('**') && part.endsWith('**')) {
                         return (
-                          <span key={partIndex} className="font-bold text-blue-700 text-lg">
+                          <span key={partIndex} className="font-bold text-blue-700 text-lg font-heading">
                             {part.slice(2, -2)}
                           </span>
                         );
@@ -104,7 +104,7 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
             
             // Regular paragraphs
             return (
-              <p key={index} className="text-gray-700 leading-relaxed mb-6 text-lg">
+              <p key={index} className="text-gray-700 leading-relaxed mb-6 text-lg font-serif">
                 {section}
               </p>
             );
