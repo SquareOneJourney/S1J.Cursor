@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Compass, Rocket, ArrowRight, Clock, TrendingUp } from 'lucide-react';
+import { Compass, Rocket, ArrowRight, Clock, TrendingUp, Search } from 'lucide-react';
 
 export function Homepage() {
   const navigate = useNavigate();
@@ -52,6 +52,22 @@ A comprehensive business simulator that helps you explore AI tools, test busines
           </div>
         </div>
 
+        {/* SEO Research Tools Section */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">SEO Research Simulator</h2>
+          <div className="text-center mb-6">
+            <p className="text-gray-600 mb-4">
+              Practice keyword research, competitor analysis, and content discovery with our interactive SEO tools.
+            </p>
+            <button
+              onClick={() => navigate('/seo')}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              <Search size={20} />
+              Launch SEO Simulator
+            </button>
+          </div>
+        </div>
 
         {/* Journey Tiles */}
         <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
