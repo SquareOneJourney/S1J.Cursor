@@ -35,19 +35,19 @@ export function Homepage() {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-6xl font-bold text-gray-900 mb-6 font-heading">
-Start at <span className="text-blue-600">SquareOne</span> <span className="text-green-600">Simulator</span>
+            Start at <span className="text-blue-600">SquareOne</span>
           </h1>
           <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto font-serif">
-A comprehensive business simulator that helps you explore AI tools, test business ideas, and build your entrepreneurial journey with hands-on practice.
+          A small business resource built for you. Explore our step-by-step guides to help you learn AI and grow your business.
           </p>
           <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 font-medium">
             <div className="flex items-center">
               <Clock size={16} className="mr-2" />
-              Interactive simulation
+              Self-paced learning
             </div>
             <div className="flex items-center">
               <TrendingUp size={16} className="mr-2" />
-              Real-world practice
+              It's time for your next journey
             </div>
           </div>
         </div>
