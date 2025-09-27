@@ -81,11 +81,42 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
               );
             }
             
-            // Handle bold text (Example: and Prompt: labels)
+            // Handle links
+            if (section.startsWith('[Link to')) {
+              const linkMatch = section.match(/\[([^\]]+)\]\(([^)]+)\)/);
+              if (linkMatch) {
+                return (
+                  <div key={index} className="mb-4">
+                    <a 
+                      href={linkMatch[2]} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-heading"
+                    >
+                      <ExternalLink size={16} className="mr-2" />
+                      {linkMatch[1]}
+                    </a>
+                  </div>
+                );
+              }
+            }
+            
+            // Handle "Once image is uploaded..." instruction
+            if (section.startsWith('Once image is uploaded')) {
+              return (
+                <div key={index} className="mb-4 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                  <p className="text-blue-800 font-semibold font-heading">
+                    {section}
+                  </p>
+                </div>
+              );
+            }
+            
+            // Handle bold text (Example: labels)
             if (section.includes('**')) {
               const parts = section.split(/(\*\*.*?\*\*)/g);
               return (
-                <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg border-l-4 border-blue-300">
+                <div key={index} className="mb-4 p-4 bg-gray-50 rounded-lg border-l-4 border-blue-300">
                   <div className="text-gray-800 leading-relaxed font-serif">
                     {parts.map((part, partIndex) => {
                       if (part.startsWith('**') && part.endsWith('**')) {
