@@ -8,14 +8,8 @@ export function WorksheetPage() {
   const { worksheet, removeItem, updateNotes, clearWorksheet } = useWorksheet();
 
   const handleDownloadAll = async () => {
-    try {
-      // This would use the existing PDF generator
-      const { generatePDF } = await import('../../utils/pdfGenerator');
-      await generatePDF(worksheet.items, 'my-complete-worksheet.pdf');
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-      alert('Failed to generate PDF. Please try again.');
-    }
+    // PDF generation functionality removed - can be re-implemented later if needed
+    alert('PDF download feature is temporarily unavailable. You can copy your worksheet content manually.');
   };
 
   const handleClearAll = () => {

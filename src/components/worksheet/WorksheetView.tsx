@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Download, Mail, Trash2, Edit3, FileText, ExternalLink } from 'lucide-react';
-import { generatePDF } from '../../utils/pdfGenerator';
+// PDF generation removed - functionality can be re-implemented later if needed
 import type { WorksheetItem } from '../../types/worksheet';
 
 interface WorksheetViewProps {
@@ -14,12 +14,8 @@ export function WorksheetView({ items, onRemoveItem, onUpdateNotes }: WorksheetV
   const [editNotes, setEditNotes] = useState('');
 
   const handleDownloadPDF = async () => {
-    try {
-      await generatePDF(items, 'my-worksheet.pdf');
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-      alert('Failed to generate PDF. Please try again.');
-    }
+    // PDF generation functionality removed - can be re-implemented later if needed
+    alert('PDF download feature is temporarily unavailable. You can copy your worksheet content manually.');
   };
 
   const handleEmailWorksheet = () => {

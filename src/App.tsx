@@ -5,8 +5,7 @@ import { WorksheetProvider } from './contexts/WorksheetContext';
 import { Header } from './components/Header';
 import { Homepage } from './components/Homepage';
 import { SEODashboard } from './components/seo/SEODashboard';
-import { ExploreJourney } from './components/journeys/ExploreJourney';
-import { StartJourney } from './components/journeys/StartJourney';
+import { TileJourney } from './components/journeys/TileJourney';
 import { ArticlePage } from './components/pages/ArticlePage';
 import { WorksheetPage } from './components/pages/WorksheetPage';
 import { PrivacyPolicy } from './components/pages/PrivacyPolicy';
@@ -25,8 +24,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="/seo" element={<SEODashboard />} />
-                <Route path="/explore" element={<ExploreJourney />} />
-                <Route path="/start" element={<StartJourney />} />
+                <Route path="/explore" element={<TileJourney />} />
+                <Route path="/start" element={<TileJourney />} />
                 <Route path="/article/:id" element={<ArticlePage />} />
                 <Route path="/worksheet" element={<WorksheetPage />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
