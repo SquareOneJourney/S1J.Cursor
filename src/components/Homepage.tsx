@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Compass, Rocket, ArrowRight, Clock, TrendingUp } from 'lucide-react';
+import { Compass, Rocket, ArrowRight, Clock, TrendingUp, Search } from 'lucide-react';
 
 export function Homepage() {
   const navigate = useNavigate();
@@ -49,6 +49,23 @@ export function Homepage() {
               <TrendingUp size={16} className="mr-2" />
               It's time for your next journey
             </div>
+          </div>
+        </div>
+
+        {/* SEO Research Section */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">SEO Research Tools</h2>
+          <div className="text-center mb-6">
+            <p className="text-gray-600 mb-4">
+              Discover keywords, analyze competitors, and find niche content to boost your business visibility.
+            </p>
+            <button
+              onClick={() => navigate('/seo')}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              <Search size={20} />
+              Start SEO Research
+            </button>
           </div>
         </div>
 
