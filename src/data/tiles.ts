@@ -161,10 +161,16 @@ export const tiles: Tile[] = [
     content: {
       type: 'text',
       data: {
-        text: 'Learn how AI can analyze market data, track competitor activities, and identify emerging trends to keep your business competitive.'
+        text: 'Learn how AI can analyze market data, track competitor activities, and identify emerging trends to keep your business competitive. Use our built-in SEO research tools to discover keywords, analyze competitors, and find content opportunities.'
       }
     },
     links: [
+      {
+        name: 'SEO Research Tools',
+        url: '/seo',
+        description: 'Built-in keyword research, competitor analysis, and content discovery tools',
+        type: 'tool'
+      },
       {
         name: 'Google Analytics Intelligence',
         url: 'https://analytics.google.com',
@@ -178,7 +184,7 @@ export const tiles: Tile[] = [
         type: 'tool'
       }
     ],
-    tags: ['market analysis', 'competitive intelligence', 'trends'],
+    tags: ['market analysis', 'competitive intelligence', 'trends', 'SEO research', 'keyword analysis'],
     estimatedTime: '25 minutes',
     difficulty: 'intermediate'
   },
@@ -463,10 +469,16 @@ export const tiles: Tile[] = [
     content: {
       type: 'text',
       data: {
-        text: 'Learn how AI can analyze market data, track competitor activities, and identify emerging trends to keep your business competitive.'
+        text: 'Learn how AI can analyze market data, track competitor activities, and identify emerging trends to keep your business competitive. Use our built-in SEO research tools to discover keywords, analyze competitors, and find content opportunities.'
       }
     },
     links: [
+      {
+        name: 'SEO Research Tools',
+        url: '/seo',
+        description: 'Built-in keyword research, competitor analysis, and content discovery tools',
+        type: 'tool'
+      },
       {
         name: 'Google Analytics Intelligence',
         url: 'https://analytics.google.com',
@@ -480,7 +492,7 @@ export const tiles: Tile[] = [
         type: 'tool'
       }
     ],
-    tags: ['market analysis', 'competitive intelligence', 'trends'],
+    tags: ['market analysis', 'competitive intelligence', 'trends', 'SEO research', 'keyword analysis'],
     estimatedTime: '25 minutes',
     difficulty: 'intermediate'
   },
