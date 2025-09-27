@@ -64,11 +64,47 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
           </div>
         );
       default:
+        const renderMarkdownContent = (text: string) => {
+          // Split by double newlines to get sections
+          const sections = text.split('\n\n');
+          
+          return sections.map((section, index) => {
+            // Handle headers
+            if (section.startsWith('## ')) {
+              return (
+                <h2 key={index} className="text-xl font-bold text-gray-900 mt-6 mb-3 first:mt-0">
+                  {section.replace('## ', '')}
+                </h2>
+              );
+            }
+            
+            // Handle bold text
+            if (section.includes('**')) {
+              const parts = section.split(/(\*\*.*?\*\*)/g);
+              return (
+                <p key={index} className="text-gray-700 leading-relaxed mb-4">
+                  {parts.map((part, partIndex) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                      return <strong key={partIndex} className="font-semibold text-gray-900">{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                  })}
+                </p>
+              );
+            }
+            
+            // Regular paragraphs
+            return (
+              <p key={index} className="text-gray-700 leading-relaxed mb-4">
+                {section}
+              </p>
+            );
+          });
+        };
+
         return (
           <div className="prose max-w-none">
-            <p className="text-gray-700 leading-relaxed">
-              {tile.content.data?.text || 'Detailed content and instructions would be displayed here.'}
-            </p>
+            {renderMarkdownContent(tile.content.data?.text || 'Detailed content and instructions would be displayed here.')}
           </div>
         );
     }
