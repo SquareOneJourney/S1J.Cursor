@@ -18,8 +18,6 @@ export interface Tile {
   }>;
   relatedTiles?: string[]; // IDs of related tiles
   tags: string[];
-  estimatedTime: string; // e.g., "5 minutes", "15 minutes"
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
 }
 
 export interface TileCategory {

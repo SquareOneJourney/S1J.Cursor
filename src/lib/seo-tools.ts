@@ -2,7 +2,6 @@
 export interface SEOKeywordData {
   keyword: string;
   searchVolume: number;
-  difficulty: number;
   cpc: number;
   competition: 'low' | 'medium' | 'high';
   relatedKeywords: string[];
@@ -69,7 +68,6 @@ export class SEOResearchTools {
     return baseKeywords.map(keyword => ({
       keyword,
       searchVolume: Math.floor(Math.random() * 10000) + 100,
-      difficulty: Math.floor(Math.random() * 100) + 1,
       cpc: Math.random() * 5,
       competition: ['low', 'medium', 'high'][Math.floor(Math.random() * 3)] as 'low' | 'medium' | 'high',
       relatedKeywords: this.generateRelatedKeywords(keyword),

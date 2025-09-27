@@ -135,7 +135,6 @@ export const SEOKeywordAnalyzer: React.FC<SEOKeywordAnalyzerProps> = ({ onKeywor
                     <Target className="text-orange-600" size={16} />
                     <div>
                       <div className="text-sm text-gray-500">Difficulty</div>
-                      <div className="font-semibold">{keyword.difficulty}/100</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Clock, Bookmark, ExternalLink, Play, FileText, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Bookmark, ExternalLink, Play, FileText, ArrowRight } from 'lucide-react';
 import { SaveToWorksheetModal } from '../worksheet/SaveToWorksheetModal';
 import { MarketingResearchWithoutAI } from '../pages/ArticlePage';
 import { tiles } from '../../data/tiles';
@@ -20,14 +20,6 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
     return <MarketingResearchWithoutAI onBack={onBack} />;
   }
 
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case 'beginner': return 'bg-green-100 text-green-800';
-      case 'intermediate': return 'bg-yellow-100 text-yellow-800';
-      case 'advanced': return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
 
   const getJourneyTypeColor = (journeyType: string) => {
     switch (journeyType) {
@@ -151,13 +143,6 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
               <p className="text-xl text-gray-600 mb-4">{tile.description}</p>
               
               <div className="flex items-center space-x-4 text-sm text-gray-500">
-                <div className="flex items-center">
-                  <Clock size={16} className="mr-1" />
-                  {tile.estimatedTime}
-                </div>
-                <span className={`px-2 py-1 rounded-full text-xs ${getDifficultyColor(tile.difficulty)}`}>
-                  {tile.difficulty}
-                </span>
                 {tile.content.type === 'video' && (
                   <div className="flex items-center">
                     <Play size={16} className="mr-1" />

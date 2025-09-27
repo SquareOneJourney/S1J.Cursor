@@ -50,10 +50,6 @@ export const SEODashboard: React.FC = () => {
     return keywords.reduce((sum, keyword) => sum + keyword.searchVolume, 0);
   };
 
-  const getAverageDifficulty = () => {
-    if (keywords.length === 0) return 0;
-    return Math.round(keywords.reduce((sum, keyword) => sum + keyword.difficulty, 0) / keywords.length);
-  };
 
   const getLowCompetitionKeywords = () => {
     return keywords.filter(keyword => keyword.competition === 'low').length;
@@ -99,7 +95,6 @@ export const SEODashboard: React.FC = () => {
               </div>
               <div className="text-3xl font-bold text-green-600">{getLowCompetitionKeywords()}</div>
               <div className="text-sm text-gray-600">
-                Avg difficulty: {getAverageDifficulty()}/100
               </div>
             </div>
 

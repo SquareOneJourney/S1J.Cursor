@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Compass, Rocket, ArrowRight, Clock, TrendingUp } from 'lucide-react';
+import { Compass, Rocket, ArrowRight, TrendingUp } from 'lucide-react';
 
 export function Homepage() {
   const navigate = useNavigate();
@@ -42,10 +42,6 @@ export function Homepage() {
           </p>
           <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 font-medium">
             <div className="flex items-center">
-              <Clock size={16} className="mr-2" />
-              Self-paced learning
-            </div>
-            <div className="flex items-center">
               <TrendingUp size={16} className="mr-2" />
               It's time for your next journey
             </div>
@@ -63,17 +59,6 @@ export function Homepage() {
                   className={`${journey.color} border-2 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 group relative overflow-hidden`}
                   onClick={() => navigate(`/${journey.id}`)}
                 >
-                {/* Level indicators */}
-                <div className="absolute top-4 right-4 flex space-x-1">
-                  {[1, 2, 3].map((level)  => (
-                    <div
-                      key={level}
-                      className={`w-2 h-2 rounded-full ${
-                        level <= 3 ? journey.iconColor.replace('text-', 'bg-') : 'bg-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
 
                 <div className="text-center">
                   <div className="relative inline-block mb-4">

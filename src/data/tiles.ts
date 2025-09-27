@@ -29,8 +29,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['market research', 'business validation', 'free tools'],
-    estimatedTime: '20 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'marketing-research-with-ai',
@@ -59,8 +57,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['AI tools', 'market research', 'data analysis'],
-    estimatedTime: '15 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'ai-everyday-business-tasks',
@@ -89,8 +85,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['productivity', 'automation', 'admin tasks'],
-    estimatedTime: '12 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'ai-content-creation',
@@ -119,8 +113,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['content creation', 'marketing', 'design'],
-    estimatedTime: '18 minutes',
-    difficulty: 'intermediate'
   },
   {
     id: 'ai-customer-service',
@@ -185,8 +177,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['market analysis', 'competitive intelligence', 'trends', 'SEO research', 'keyword analysis'],
-    estimatedTime: '25 minutes',
-    difficulty: 'intermediate'
   },
   {
     id: 'common-myths-about-ai',
@@ -215,8 +205,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['AI education', 'myths', 'realistic expectations'],
-    estimatedTime: '10 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'ai-local-small-businesses',
@@ -245,8 +233,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['small business', 'local business', 'case studies'],
-    estimatedTime: '15 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'getting-comfortable-ai-tools',
@@ -275,8 +261,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['beginner friendly', 'experimentation', 'confidence building'],
-    estimatedTime: '12 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'future-business-ai',
@@ -305,8 +289,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['future trends', 'strategic planning', 'innovation'],
-    estimatedTime: '30 minutes',
-    difficulty: 'advanced'
   },
 
   // Start Journey Tiles - Same as Explore but with start journeyType
@@ -337,8 +319,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['market research', 'business validation', 'free tools'],
-    estimatedTime: '20 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'start-marketing-research-with-ai',
@@ -367,8 +347,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['AI tools', 'market research', 'data analysis'],
-    estimatedTime: '15 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'start-ai-everyday-business-tasks',
@@ -397,8 +375,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['productivity', 'automation', 'admin tasks'],
-    estimatedTime: '12 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'start-ai-content-creation',
@@ -428,8 +404,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['content creation', 'marketing', 'design'],
-    estimatedTime: '18 minutes',
-    difficulty: 'intermediate'
   },
   {
     id: 'start-ai-image-editor',
@@ -579,8 +553,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['market analysis', 'competitive intelligence', 'trends', 'SEO research', 'keyword analysis'],
-    estimatedTime: '25 minutes',
-    difficulty: 'intermediate'
   },
   {
     id: 'start-common-myths-about-ai',
@@ -609,8 +581,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['AI education', 'myths', 'realistic expectations'],
-    estimatedTime: '10 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'start-ai-local-small-businesses',
@@ -639,8 +609,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['small business', 'local business', 'case studies'],
-    estimatedTime: '15 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'start-getting-comfortable-ai-tools',
@@ -669,8 +637,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['beginner friendly', 'experimentation', 'confidence building'],
-    estimatedTime: '12 minutes',
-    difficulty: 'beginner'
   },
   {
     id: 'start-future-business-ai',
@@ -699,8 +665,6 @@ export const tiles: Tile[] = [
       }
     ],
     tags: ['future trends', 'strategic planning', 'innovation'],
-    estimatedTime: '30 minutes',
-    difficulty: 'advanced'
   },
 
 ];
