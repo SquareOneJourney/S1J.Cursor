@@ -82,7 +82,7 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
             }
             
             // Handle links
-            if (section.startsWith('[Link to')) {
+            if (section.includes('[Link to') && section.includes('](https://')) {
               const linkMatch = section.match(/\[([^\]]+)\]\(([^)]+)\)/);
               if (linkMatch) {
                 return (
@@ -113,7 +113,7 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
             }
             
             // Handle bold text (Example: labels)
-            if (section.includes('**')) {
+            if (section.includes('**Example:**')) {
               const parts = section.split(/(\*\*.*?\*\*)/g);
               return (
                 <div key={index} className="mb-4 p-4 bg-gray-50 rounded-lg border-l-4 border-blue-300">
@@ -129,6 +129,18 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
                       return <span key={partIndex}>{part}</span>;
                     })}
                   </div>
+                </div>
+              );
+            }
+            
+            // Handle long prompt text (copy-paste prompts)
+            if (section.length > 100 && !section.startsWith('#') && !section.startsWith('[') && !section.startsWith('Once')) {
+              return (
+                <div key={index} className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                  <p className="text-green-800 font-serif text-sm leading-relaxed">
+                    <strong className="font-heading">Copy and paste this prompt:</strong><br/><br/>
+                    {section}
+                  </p>
                 </div>
               );
             }
