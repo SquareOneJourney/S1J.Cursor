@@ -330,8 +330,10 @@ export function TileDetail({ tile, onBack, onNavigateToTile, onSaveToWorksheet }
             
             // Handle long prompt text (copy-paste prompts) - only if it contains specific prompt indicators
             if (section.length > 100 && !section.startsWith('#') && !section.startsWith('[') && !section.startsWith('Once') && 
-                (section.includes('prompt:') || section.includes('ChatGPT') || section.includes('Claude') || section.includes('AI') || 
-                 section.match(/^(Generate|Create|Write|Analyze|Summarize|Tell me|What|How|Why|Can you)/i))) {
+                (section.includes('prompt:') || section.includes('ChatGPT') || section.includes('Claude') || 
+                 section.includes('Copy and paste this prompt:') ||
+                 (section.match(/^(Generate|Create|Write|Analyze|Summarize|Tell me|What|How|Why|Can you)/i) && 
+                  (section.includes('AI') || section.includes('prompt') || section.includes('ChatGPT') || section.includes('Claude'))))) {
               return (
                 <div key={index} className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
                   <p className="text-green-800 font-serif text-sm leading-relaxed">

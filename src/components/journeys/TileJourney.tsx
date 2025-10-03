@@ -45,7 +45,7 @@ export function TileJourney() {
 
   const getJourneyTitle = (type: string) => {
     switch (type) {
-      case 'explore': return 'Explore AI';
+      case 'explore': return 'SqaureOne';
       case 'start': return 'Start Your Business';
       default: return 'Journey';
     }
