@@ -1,4 +1,4 @@
-import { Search, Brain, Calendar, PenTool, MessageCircle, TrendingUp, HelpCircle, Building2, Play, Rocket, Image } from 'lucide-react';
+import { Search, Brain, Calendar, PenTool, MessageCircle, TrendingUp, HelpCircle, Building2, Play, Rocket, Image, Scale, Users, Shield, Heart, Cog, Handshake, DollarSign, BarChart3, Calculator } from 'lucide-react';
 import type { Tile } from '../../types/tiles';
 
 interface TileCardProps {
@@ -25,34 +25,82 @@ export function TileCard({ tile, onNavigate }: TileCardProps) {
   };
 
   const getTileIcon = (tileId: string) => {
+    const iconColor = tile.journeyType === 'explore' ? 'text-blue-600' : 'text-green-600';
+    
     switch (tileId) {
+      // New comprehensive explore tiles
+      case 'market-research':
+      case 'start-market-research':
+        return <Search className={`w-8 h-8 ${iconColor}`} />;
+      case 'marketing-outreach':
+        return <TrendingUp className={`w-8 h-8 ${iconColor}`} />;
+      case 'legal-business-ethics':
+        return <Scale className={`w-8 h-8 ${iconColor}`} />;
+      case 'customer-experience':
+        return <Heart className={`w-8 h-8 ${iconColor}`} />;
+      case 'content-creation':
+        return <PenTool className={`w-8 h-8 ${iconColor}`} />;
+      case 'operations-productivity':
+        return <Cog className={`w-8 h-8 ${iconColor}`} />;
+      case 'networking-partnerships':
+        return <Handshake className={`w-8 h-8 ${iconColor}`} />;
+      case 'sales-conversions-revenue':
+        return <DollarSign className={`w-8 h-8 ${iconColor}`} />;
+      case 'growth-scaling':
+        return <BarChart3 className={`w-8 h-8 ${iconColor}`} />;
+      case 'finance-accounting':
+        return <Calculator className={`w-8 h-8 ${iconColor}`} />;
+      
+      // New comprehensive start tiles
+      case 'start-market-research':
+        return <Search className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-marketing-outreach':
+        return <TrendingUp className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-legal-business-ethics':
+        return <Scale className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-customer-experience':
+        return <Heart className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-content-creation':
+        return <PenTool className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-operations-productivity':
+        return <Cog className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-networking-partnerships':
+        return <Handshake className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-sales-conversions-revenue':
+        return <DollarSign className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-growth-scaling':
+        return <BarChart3 className={`w-8 h-8 ${iconColor}`} />;
+      case 'start-finance-accounting':
+        return <Calculator className={`w-8 h-8 ${iconColor}`} />;
+      
+      // Legacy tiles
       case 'marketing-research-without-ai':
       case 'marketing-research-with-ai':
-        return <Search className="w-8 h-8 text-blue-600" />;
+        return <Search className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-everyday-business-tasks':
-        return <Calendar className="w-8 h-8 text-blue-600" />;
+        return <Calendar className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-content-creation':
-        return <PenTool className="w-8 h-8 text-blue-600" />;
+        return <PenTool className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-customer-service':
-        return <MessageCircle className="w-8 h-8 text-blue-600" />;
+        return <MessageCircle className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-market-insights-trends':
-        return <TrendingUp className="w-8 h-8 text-blue-600" />;
+        return <TrendingUp className={`w-8 h-8 ${iconColor}`} />;
       case 'common-myths-about-ai':
-        return <HelpCircle className="w-8 h-8 text-blue-600" />;
+        return <HelpCircle className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-local-small-businesses':
-        return <Building2 className="w-8 h-8 text-blue-600" />;
+        return <Building2 className={`w-8 h-8 ${iconColor}`} />;
       case 'getting-comfortable-ai-tools':
-        return <Play className="w-8 h-8 text-blue-600" />;
+        return <Play className={`w-8 h-8 ${iconColor}`} />;
       case 'future-business-ai':
-        return <Brain className="w-8 h-8 text-blue-600" />;
+        return <Brain className={`w-8 h-8 ${iconColor}`} />;
       case 'start-business-ideas':
-        return <Rocket className="w-8 h-8 text-green-600" />;
+        return <Rocket className={`w-8 h-8 ${iconColor}`} />;
       case 'start-branding':
-        return <PenTool className="w-8 h-8 text-green-600" />;
+        return <PenTool className={`w-8 h-8 ${iconColor}`} />;
       case 'start-marketing-setup':
-        return <TrendingUp className="w-8 h-8 text-green-600" />;
+        return <TrendingUp className={`w-8 h-8 ${iconColor}`} />;
       case 'start-ai-image-editor':
-        return <Image className="w-8 h-8 text-green-600" />;
+        return <Image className={`w-8 h-8 ${iconColor}`} />;
       default:
         return <Brain className="w-8 h-8 text-gray-600" />;
     }
@@ -78,6 +126,15 @@ export function TileCard({ tile, onNavigate }: TileCardProps) {
           <p className="text-gray-700 leading-relaxed text-base">
             {tile.description}
           </p>
+          
+          {/* Sub-tiles indicator */}
+          {tile.subTiles && tile.subTiles.length > 0 && (
+            <div className="mt-3 flex items-center text-sm text-gray-600">
+              <div className="flex items-center bg-blue-50 px-2 py-1 rounded-full">
+                <span className="text-blue-600 font-medium">{tile.subTiles.length} sections</span>
+              </div>
+            </div>
+          )}
         </div>
         
         {/* Icon on the right */}

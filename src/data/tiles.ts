@@ -1,7 +1,15 @@
 import type { Tile, TileCategory } from '../types/tiles';
+import { exploreTiles } from './explore-tiles';
+import { startTiles } from './start-tiles';
 
 export const tiles: Tile[] = [
-  // Explore Journey Tiles - 10 tiles as specified
+  // New comprehensive Explore Journey Tiles
+  ...exploreTiles,
+  
+  // New comprehensive Start Journey Tiles
+  ...startTiles,
+  
+  // Legacy tiles (keeping for backward compatibility)
   {
     id: 'marketing-research-without-ai',
     title: 'Marketing Research Without AI',
@@ -721,35 +729,19 @@ Apply a modern, cool tone with subtle blues and whites for a fresh look, or a wa
 
 export const tileCategories: TileCategory[] = [
   {
-    id: 'explore-basics',
-    name: 'AI Basics',
-    description: 'Start your AI journey with fundamental concepts and practical applications.',
-    tiles: tiles.filter(t => t.journeyType === 'explore' && t.level === 1),
+    id: 'explore-business-fundamentals',
+    name: 'Business Fundamentals',
+    description: 'Essential business areas every entrepreneur should master.',
+    tiles: exploreTiles,
     level: 1,
     journeyType: 'explore'
   },
   {
-    id: 'explore-advanced',
-    name: 'Advanced AI Applications',
-    description: 'Dive deeper into AI tools and advanced use cases for your business.',
-    tiles: tiles.filter(t => t.journeyType === 'explore' && t.level > 1),
-    level: 2,
-    journeyType: 'explore'
-  },
-  {
-    id: 'start-basics',
-    name: 'AI Basics',
-    description: 'Start your AI journey with fundamental concepts and practical applications.',
-    tiles: tiles.filter(t => t.journeyType === 'start' && t.level === 1),
+    id: 'start-business-fundamentals',
+    name: 'Startup Essentials',
+    description: 'Critical areas to focus on when starting your business.',
+    tiles: startTiles,
     level: 1,
-    journeyType: 'start'
-  },
-  {
-    id: 'start-advanced',
-    name: 'Advanced AI Applications',
-    description: 'Dive deeper into AI tools and advanced use cases for your business.',
-    tiles: tiles.filter(t => t.journeyType === 'start' && t.level > 1),
-    level: 2,
     journeyType: 'start'
   },
 ];
