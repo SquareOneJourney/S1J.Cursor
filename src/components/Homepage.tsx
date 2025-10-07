@@ -42,15 +42,15 @@ export function Homepage() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-7xl md:text-8xl font-light text-black mb-8 font-heading tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-black mb-8 font-heading tracking-tight">
             Start your
             <br />
             <span className="font-semibold">SquareOneJourney</span>
           </h1>
-          <p className="text-2xl text-gray-600 mb-6 max-w-4xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto font-light leading-relaxed">
             A small business resource built for you. Explore our step-by-step guides to help you learn AI and grow your business.
           </p>
-          <div className="flex items-center justify-center space-x-12 text-base text-gray-500 font-light">
+          <div className="flex items-center justify-center space-x-4 sm:space-x-8 md:space-x-12 text-sm sm:text-base text-gray-500 font-light">
             <div className="flex items-center">
               <TrendingUp size={20} className="mr-3" />
               It's time for your next journey
