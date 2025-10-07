@@ -754,6 +754,11 @@ Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Transform this into a high-quality, studio-style product image with a marble background. Use soft, balanced lighting, remove any background distractions, apply subtle color correction, and give it a clean, modern look suitable for an e-commerce catalog. Keep the product's shape, texture, and colors true to life. Ensure the shot is eye-level, highlighting the product directly. Zoom 20% out on the image and give it a slight side angle view, making sure it's centered.
 
+**This prompt is great for:**
+• A skincare brand enhancing photos for its Shopify store
+• A boutique upgrading jewelry images for Etsy
+• A small appliance company refining product shots for Amazon listings
+
 ### 2. Upgrade casual team photos
 
 **Example:** Upload a group shot taken at your café
@@ -763,6 +768,11 @@ Transform this into a high-quality, studio-style product image with a marble bac
 Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Enhance this team photo to look professional. Replace the background with a clean office or neutral gradient, brighten the lighting, smooth colors, and make sure each face is evenly lit. Maintain authenticity while giving the shot a polished, corporate look.
+
+**This prompt is great for:**
+• A tech startup refreshing its "About Us" team section
+• A fitness studio updating instructor photos for social media
+• A real estate agency creating a cohesive team profile lineup
 
 ### 3. Showcase before-and-after transformations
 
@@ -774,6 +784,11 @@ Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Create a split-screen before-and-after graphic. Keep the "before" side slightly muted and the "after" side vibrant. Add a subtle diagonal divider between them. Emphasize cleanliness and order on the "after" side with brighter lighting and sharper details.
 
+**This prompt is great for:**
+• A home renovation company displaying project results
+• A beauty salon showing client transformations
+• A cleaning service promoting dramatic makeovers
+
 ### 4. Add subtle branding to images
 
 **Example:** Use a stock croissant photo
@@ -783,6 +798,11 @@ Create a split-screen before-and-after graphic. Keep the "before" side slightly 
 Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Add a small, semi-transparent logo watermark in the lower-right corner. Keep it crisp but not distracting. Ensure it works across light and dark backgrounds by adjusting opacity.
+
+**This prompt is great for:**
+• A freelance photographer branding social media posts
+• A clothing boutique marking lookbook images
+• A design agency maintaining consistent visual identity
 
 ### 5. Create event promo graphics
 
@@ -794,6 +814,11 @@ Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Overlay text announcing an event (e.g., "Sunday Brunch — 10am to 2pm") in bold, modern typography. Place text in the top third, use a soft gradient background overlay to make it readable. Add a branded accent color border.
 
+**This prompt is great for:**
+• A coworking space promoting networking nights
+• A yoga studio announcing a wellness workshop
+• A retail store advertising a seasonal sale event
+
 ### 6. Apply seasonal themes
 
 **Example:** A latte photo for fall promotions
@@ -803,6 +828,11 @@ Overlay text announcing an event (e.g., "Sunday Brunch — 10am to 2pm") in bold
 Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Add scattered autumn leaves around the edges. Apply a warm orange filter to give the photo a cozy seasonal feel. Keep the product clear and central, with seasonal accents enhancing but not overpowering it.
+
+**This prompt is great for:**
+• A coffee shop launching seasonal drink promos
+• A home décor store running fall collection ads
+• An online clothing brand creating themed campaign visuals
 
 ### 7. Highlight testimonials visually
 
@@ -814,6 +844,11 @@ Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Blur the original product photo slightly, then overlay a white text box with the customer's testimonial. Use clean typography, add quotation marks, and highlight the customer's name in bold.
 
+**This prompt is great for:**
+• A marketing agency featuring client feedback
+• A skincare brand showcasing real customer reviews
+• A hotel or spa highlighting guest experiences
+
 ### 8. Turn photos into infographics
 
 **Example:** A photo of your new bread
@@ -823,6 +858,11 @@ Blur the original product photo slightly, then overlay a white text box with the
 Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Add small infographic-style callouts with icons and short text like "Freshly Baked," "Locally Sourced Flour," and "100% Organic." Use arrows pointing to the bread. Keep the layout clean and professional.
+
+**This prompt is great for:**
+• A fitness brand explaining product benefits (e.g., protein bars)
+• A sustainable fashion company detailing material sources
+• A tech company visualizing product features or data points
 
 ### 9. Make playful travel swaps
 
@@ -834,6 +874,11 @@ Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Place the logo into a famous landmark scene, such as on a street sign in Paris or on a storefront in New York. Ensure the perspective matches the environment so it looks natural yet fun.
 
+**This prompt is great for:**
+• A travel agency adding personality to social posts
+• A global brand teasing international expansion
+• A content creator making fun "brand goes global" visuals
+
 ### 10. Adjust mood and tone for campaigns
 
 **Example:** A photo of your dining space
@@ -843,10 +888,21 @@ Place the logo into a famous landmark scene, such as on a street sign in Paris o
 Once image is uploaded on Gemini Nano Banana, copy and paste this prompt:
 
 Apply a modern, cool tone with subtle blues and whites for a fresh look, or a warm, vintage filter with soft yellows for a nostalgic feel. Keep lines sharp and details clear while shifting the overall mood.
+
+**This prompt is great for:**
+• A fashion retailer setting campaign tone consistency
+• A hospitality brand aligning imagery with a new brand mood
+• A real estate company creating distinct seasonal listing visuals
 `
           }
         },
         links: [
+          {
+            name: 'Gemini Nano Banana',
+            url: 'https://gemini.google.com',
+            description: 'Google\'s AI image editor with advanced editing capabilities',
+            type: 'tool'
+          },
           {
             name: 'Adobe Firefly',
             url: 'https://firefly.adobe.com',
