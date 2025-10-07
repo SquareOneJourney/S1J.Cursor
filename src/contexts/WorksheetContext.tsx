@@ -34,7 +34,7 @@ export function WorksheetProvider({ children }: WorksheetProviderProps) {
         const parsed = JSON.parse(saved);
         return {
           ...parsed,
-          items: parsed.items.map((item: any) => ({
+          items: parsed.items.map((item: WorksheetItem) => ({
             ...item,
             savedAt: new Date(item.savedAt)
           }))

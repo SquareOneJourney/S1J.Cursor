@@ -24,7 +24,6 @@ function App() {
               <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="/seo" element={<SEODashboard />} />
-                <Route path="/explore" element={<TileJourney />} />
                 <Route path="/start" element={<TileJourney />} />
                 <Route path="/article/:id" element={<ArticlePage />} />
                 <Route path="/worksheet" element={<WorksheetPage />} />

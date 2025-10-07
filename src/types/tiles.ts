@@ -1,10 +1,17 @@
+export interface ContentData {
+  text?: string;
+  title?: string;
+  url?: string;
+  description?: string;
+}
+
 export interface SubTile {
   id: string;
   title: string;
   description: string;
   content: {
     type: 'text' | 'video' | 'interactive';
-    data: any;
+    data: ContentData;
   };
   links?: Array<{
     name: string;
@@ -20,15 +27,16 @@ export interface Tile {
   title: string;
   description: string;
   level: number;
-  journeyType: 'explore' | 'start';
+  journeyType: 'start'; // Removed 'explore' since we're removing that section
+  isMainStage?: boolean; // Indicates if this is a main stage tile
   parentId?: string; // For nested tiles
   children?: string[]; // IDs of child tiles
   subTiles?: SubTile[]; // New sub-tiles structure
   content: {
     type: 'text' | 'video' | 'interactive';
-    data: any;
+    data: ContentData;
   };
-  links: Array<{
+  links?: Array<{
     name: string;
     url: string;
     description: string;
@@ -44,5 +52,5 @@ export interface TileCategory {
   description: string;
   tiles: Tile[];
   level: number;
-  journeyType: 'explore' | 'start';
+  journeyType: 'start'; // Removed 'explore' since we're removing that section
 }

@@ -104,7 +104,6 @@ export function WorksheetView({ items, onRemoveItem, onUpdateNotes }: WorksheetV
                   )}
                   {item.journeyType && (
                     <span className={`text-xs px-2 py-1 rounded-full ${
-                      item.journeyType === 'explore' ? 'bg-blue-100 text-blue-800' :
                       item.journeyType === 'start' ? 'bg-green-100 text-green-800' :
                       'bg-orange-100 text-orange-800'
                     }`}>

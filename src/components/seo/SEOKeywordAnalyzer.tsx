@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, TrendingUp, Target, DollarSign, Users, BarChart3, Loader2 } from 'lucide-react';
+import { Search, TrendingUp, Target, DollarSign, BarChart3, Loader2 } from 'lucide-react';
 import { seoResearchTools, SEOKeywordData } from '../../lib/seo-tools';
 
 interface SEOKeywordAnalyzerProps {

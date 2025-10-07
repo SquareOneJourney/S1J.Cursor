@@ -70,15 +70,15 @@ export function WorksheetPage() {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-green-600">
-                  {worksheet.items.filter(item => item.journeyType === 'explore').length}
-                </div>
-                <div className="text-sm text-gray-500">Explore Items</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600">
                   {worksheet.items.filter(item => item.journeyType === 'start').length}
                 </div>
                 <div className="text-sm text-gray-500">Start Items</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-orange-600">
+                  {worksheet.items.filter(item => item.type === 'guide').length}
+                </div>
+                <div className="text-sm text-gray-500">Guides</div>
               </div>
             </div>
           </div>
@@ -103,10 +103,10 @@ export function WorksheetPage() {
             </p>
             <div className="flex justify-center space-x-4">
               <button
-                onClick={() => navigate('/explore')}
+                onClick={() => navigate('/start')}
                 className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
               >
-                Explore AI
+                Start Journey
               </button>
               <button
                 onClick={() => navigate('/start')}

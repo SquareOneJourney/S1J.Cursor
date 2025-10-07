@@ -75,18 +75,21 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }: SignUpModalPro
   if (success) {
     return (
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100] p-4 overflow-y-auto"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4 overflow-y-auto"
         onKeyDown={handleKeyDown}
         role="dialog"
         aria-modal="true"
         aria-labelledby="success-title"
       >
-        <div className="bg-white rounded-2xl p-8 max-w-md w-full my-8">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-8 max-w-md w-full my-8 border border-gray-100/50 shadow-2xl">
+          {/* Subtle Background Pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-50/20 via-transparent to-blue-50/20 opacity-50 rounded-3xl"></div>
+          
+          <div className="relative z-10 text-center">
+            <div className="w-16 h-16 bg-green-100/80 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 border border-green-200/50">
               <Mail className="w-8 h-8 text-green-600" />
             </div>
-            <h2 id="success-title" className="text-2xl font-bold text-gray-900 mb-2 font-heading">Check Your Email</h2>
+            <h2 id="success-title" className="text-3xl font-light text-gray-900 mb-4 font-heading bg-gradient-to-r from-gray-900 via-green-900 to-gray-900 bg-clip-text text-transparent">Check Your Email</h2>
             <p className="text-gray-600 mb-6">
               We've sent you a confirmation link. Please check your email and click the link to verify your account.
             </p>
@@ -106,15 +109,19 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }: SignUpModalPro
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100] p-4 overflow-y-auto"
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4 overflow-y-auto"
       onKeyDown={handleKeyDown}
       role="dialog"
       aria-modal="true"
       aria-labelledby="signup-title"
     >
-      <div className="bg-white rounded-2xl p-8 max-w-md w-full my-8">
-        <div className="flex items-center justify-between mb-6">
-          <h2 id="signup-title" className="text-2xl font-bold text-gray-900 font-heading">Create Account</h2>
+      <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-8 max-w-md w-full my-8 border border-gray-100/50 shadow-2xl">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-transparent to-purple-50/20 opacity-50 rounded-3xl"></div>
+        
+        <div className="relative z-10">
+          <div className="flex items-center justify-between mb-8">
+            <h2 id="signup-title" className="text-3xl font-light text-gray-900 font-heading bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent">Create Account</h2>
           <button
             onClick={handleClose}
             onKeyDown={(e) => e.key === 'Enter' && handleClose()}
