@@ -17,11 +17,6 @@ export function TileJourney() {
   // Get journey type from the current pathname
   const journeyType = location.pathname.replace('/', '') as 'start';
 
-  if (journeyType !== 'start') {
-    navigate('/');
-    return null;
-  }
-
   // Handle stage and tile parameters from URL
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -64,6 +59,11 @@ export function TileJourney() {
       }
     }
   }, [location.search]);
+
+  if (journeyType !== 'start') {
+    navigate('/');
+    return null;
+  }
 
   // Get main stage tiles (isMainStage: true)
   const mainStageTiles = tiles.filter(tile => tile.journeyType === journeyType && tile.isMainStage);

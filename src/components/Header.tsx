@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FileText, Menu, X, LogOut, Building2, Eye, TrendingUp, ChevronDown } from 'lucide-react';
+import { FileText, Menu, X, Building2, Eye, TrendingUp, ChevronDown, BookOpen } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 interface HeaderProps {
@@ -155,6 +155,21 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
               </div>
             ))}
 
+            {/* Articles Link */}
+            <div className="relative group">
+              <button
+                onClick={() => navigate('/articles')}
+                className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                  isActive('/articles') || location.pathname.startsWith('/articles/')
+                    ? 'text-black' 
+                    : 'text-gray-700 hover:text-black'
+                }`}
+              >
+                <BookOpen size={16} />
+                <span>Articles</span>
+              </button>
+            </div>
+
             {user && (
               <div className="relative group">
                 <button
@@ -269,6 +284,23 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
                   </button>
                 </div>
               ))}
+              
+              {/* Articles Link - Mobile */}
+              <div className="pt-2">
+                <button
+                  onClick={() => handleNavigate('/articles')}
+                  className={`w-full text-left px-4 py-3 text-base font-medium rounded-xl transition-colors duration-200 ${
+                    isActive('/articles') || location.pathname.startsWith('/articles/')
+                      ? 'text-black bg-gray-100' 
+                      : 'text-gray-700 hover:text-black hover:bg-gray-50'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <BookOpen size={16} />
+                    <span>Articles</span>
+                  </div>
+                </button>
+              </div>
               
               {user && (
                 <div className="pt-2">

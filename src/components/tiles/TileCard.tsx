@@ -61,8 +61,6 @@ export function TileCard({ tile, onNavigate }: TileCardProps) {
         return <Search className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-everyday-business-tasks':
         return <Calendar className={`w-8 h-8 ${iconColor}`} />;
-      case 'ai-content-creation':
-        return <PenTool className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-customer-service':
         return <MessageCircle className={`w-8 h-8 ${iconColor}`} />;
       case 'ai-market-insights-trends':
