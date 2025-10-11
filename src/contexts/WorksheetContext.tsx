@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { useToast } from './ToastContext';
+import { createContext, useState, useEffect, ReactNode } from 'react';
+import { useToast } from '../hooks/useToast';
 import type { WorksheetItem, Worksheet } from '../types/worksheet';
 
 interface WorksheetContextType {
@@ -10,15 +10,8 @@ interface WorksheetContextType {
   clearWorksheet: () => void;
 }
 
-const WorksheetContext = createContext<WorksheetContextType | undefined>(undefined);
+export const WorksheetContext = createContext<WorksheetContextType | undefined>(undefined);
 
-export function useWorksheet() {
-  const context = useContext(WorksheetContext);
-  if (context === undefined) {
-    throw new Error('useWorksheet must be used within a WorksheetProvider');
-  }
-  return context;
-}
 
 interface WorksheetProviderProps {
   children: ReactNode;

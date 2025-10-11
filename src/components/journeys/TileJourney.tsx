@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { TileCard } from '../tiles/TileCard';
 import { TileDetail } from '../tiles/TileDetail';
-import { useWorksheet } from '../../contexts/WorksheetContext';
+import { useWorksheet } from '../../hooks/useWorksheet';
 import { tiles, tileCategories } from '../../data/tiles';
 import type { Tile } from '../../types/tiles';
 

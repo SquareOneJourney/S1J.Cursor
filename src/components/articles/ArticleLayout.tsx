@@ -77,13 +77,15 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
             </nav>
 
             {/* Back Button */}
-            <button
-              onClick={() => navigate('/articles')}
-              className="flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors"
-            >
-              <ArrowLeft size={20} className="mr-2" />
-              Back to Articles
-            </button>
+            <div className="sticky top-24 z-40 mb-8">
+              <button
+                onClick={() => navigate('/articles')}
+                className="flex w-fit items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-gray-600 shadow-sm ring-1 ring-gray-200 backdrop-blur hover:text-gray-900 transition-colors"
+              >
+                <ArrowLeft size={18} />
+                <span className="text-sm font-medium">Back to Articles</span>
+              </button>
+            </div>
 
             {/* Article Header */}
             <header className="mb-12">

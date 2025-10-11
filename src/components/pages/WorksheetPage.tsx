@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Download, Trash2 } from 'lucide-react';
 import { WorksheetView } from '../worksheet/WorksheetView';
-import { useWorksheet } from '../../contexts/WorksheetContext';
+import { useWorksheet } from '../../hooks/useWorksheet';
 
 export function WorksheetPage() {
   const navigate = useNavigate();

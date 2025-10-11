@@ -35,6 +35,24 @@ const mdxComponents = {
   NanoBananaPromptCheatSheetGuide,
 };
 
+const ExternalLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
+  href,
+  children,
+  ...props
+}) => {
+  const isExternal = typeof href === 'string' && /^https?:\/\//.test(href);
+
+  return (
+    <a
+      href={href}
+      {...props}
+      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
+      {children}
+    </a>
+  );
+};
+
 export const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   
@@ -68,6 +86,7 @@ export const ArticleDetailPage: React.FC = () => {
           ImagePlaceholder,
           PullQuote,
           NextArticleCTA,
+          a: ExternalLink,
         }}
       />
     </ArticleLayout>

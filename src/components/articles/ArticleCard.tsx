@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Clock, ArrowRight } from 'lucide-react';
 import { Article } from '../../data/articles';
@@ -32,11 +32,19 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       className={`group cursor-pointer bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${className}`}
     >
       {/* Thumbnail */}
-      <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center">
-        <div className="text-center text-gray-400">
-          <div className="text-2xl mb-2">📷</div>
-          <div className="text-xs">Article Image</div>
-        </div>
+      <div className="aspect-video bg-gray-100 border-b border-gray-200 flex items-center justify-center overflow-hidden">
+        {article.thumbnailUrl ? (
+          <img
+            src={article.thumbnailUrl}
+            alt={article.title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <div className="text-center text-gray-400 text-xs uppercase tracking-wide">
+            Image Coming Soon
+          </div>
+        )}
       </div>
 
       {/* Content */}
