@@ -3,6 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import { ArticleLayout } from '../articles/ArticleLayout';
 import { ImagePlaceholder } from '../articles/ImagePlaceholder';
 import { PullQuote } from '../articles/PullQuote';
+import { NextArticleCTA } from '../articles/NextArticleCTA';
 import { getArticleBySlug } from '../../data/articles';
 
 // Import MDX components
@@ -17,6 +18,7 @@ import GoogleBusinessProfileGuide from '../../content/articles/google-business-p
 import GoogleAdsLocalCampaignsGuide from '../../content/articles/google-ads-local-campaigns-guide.mdx';
 import GoogleMapsOptimizationGuide from '../../content/articles/google-maps-optimization-guide.mdx';
 import GoogleReviewsStrategyGuide from '../../content/articles/google-reviews-strategy-guide.mdx';
+import NanoBananaPromptCheatSheetGuide from '../../content/articles/nano-banana-prompt-cheat-sheet.mdx';
 
 const mdxComponents = {
   GoogleTrendsGuide,
@@ -30,6 +32,7 @@ const mdxComponents = {
   GoogleAdsLocalCampaignsGuide,
   GoogleMapsOptimizationGuide,
   GoogleReviewsStrategyGuide,
+  NanoBananaPromptCheatSheetGuide,
 };
 
 export const ArticleDetailPage: React.FC = () => {
@@ -64,6 +67,7 @@ export const ArticleDetailPage: React.FC = () => {
         components={{
           ImagePlaceholder,
           PullQuote,
+          NextArticleCTA,
         }}
       />
     </ArticleLayout>

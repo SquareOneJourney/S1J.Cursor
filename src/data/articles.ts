@@ -143,6 +143,18 @@ export const articles: Article[] = [
     category: 'Google Tools',
     thumbnailUrl: '/placeholder-article-11.jpg',
     order: 11
+  },
+  {
+    slug: 'nano-banana-prompt-cheat-sheet',
+    title: 'Explore Gemini\'s Nano Banana Image Editor',
+    subtitle: 'Nano Banana, what\'s all the fuss about?',
+    excerpt: 'No such thing as a "perfect" AI image prompt. But we can still have some fun exploring a few we have tested and think are worth sharing.',
+    author: 'Brandon Davis',
+    publishedDate: '2025-10-10',
+    readingTime: 7,
+    category: 'AI Creativity',
+    thumbnailUrl: '/placeholder-article-12.jpg',
+    order: 12
   }
 ];
 
@@ -159,4 +171,3 @@ export const getPreviousArticle = (currentSlug: string): Article | undefined => 
   const currentIndex = articles.findIndex(article => article.slug === currentSlug);
   return currentIndex > 0 ? articles[currentIndex - 1] : undefined;
 };
-

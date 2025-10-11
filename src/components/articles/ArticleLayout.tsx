@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ReadingProgressBar } from './ReadingProgressBar';
-import { TableOfContents } from './TableOfContents';
 import { Article } from '../../data/articles';
 import { getNextArticle, getPreviousArticle } from '../../data/articles';
 
@@ -16,27 +15,9 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
   children
 }) => {
   const navigate = useNavigate();
-  const [headings, setHeadings] = useState<Array<{ id: string; text: string; level: number }>>([]);
 
   const nextArticle = getNextArticle(article.slug);
   const previousArticle = getPreviousArticle(article.slug);
-
-  // Extract headings from the article content
-  useEffect(() => {
-    const extractHeadings = () => {
-      const headingElements = document.querySelectorAll('h2, h3, h4');
-      const extractedHeadings = Array.from(headingElements).map((heading, index) => ({
-        id: heading.id || `heading-${index}`,
-        text: heading.textContent || '',
-        level: parseInt(heading.tagName.charAt(1))
-      }));
-      setHeadings(extractedHeadings);
-    };
-
-    // Small delay to ensure content is rendered
-    const timer = setTimeout(extractHeadings, 100);
-    return () => clearTimeout(timer);
-  }, [article.slug]);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -72,9 +53,8 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
       <ReadingProgressBar />
       
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-3">
+        <div className="grid grid-cols-1 gap-8">
+          <div>
             {/* Breadcrumb */}
             <nav className="mb-8">
               <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -141,16 +121,6 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
                 </button>
               </div>
 
-              {/* Hero Image Placeholder */}
-              <div className="mb-12">
-                <div className="aspect-video bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <div className="text-3xl mb-2">📷</div>
-                    <div className="text-sm">Hero Image Placeholder</div>
-                    <div className="text-xs mt-1">800 × 400</div>
-                  </div>
-                </div>
-              </div>
             </header>
 
             {/* Article Content */}
@@ -230,13 +200,6 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
                   </button>
                 )}
               </div>
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <TableOfContents headings={headings} />
             </div>
           </div>
         </div>
