@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { ArticleLayout } from '../articles/ArticleLayout';
 import { ImagePlaceholder } from '../articles/ImagePlaceholder';
@@ -55,6 +55,13 @@ const ExternalLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
 
 export const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto'
+    });
+  }, [slug]);
   
   if (!slug) {
     return <Navigate to="/articles" replace />;
