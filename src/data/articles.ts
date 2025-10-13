@@ -21,13 +21,13 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 8,
     category: 'Google Tools',
-    thumbnailUrl: '/ATGoogle Trends.png',
+    thumbnailUrl: '/Google Trends Logo.PNG',
     order: 1
   },
   {
     slug: 'google-keyword-planner-guide',
     title: 'Google Keyword Planner: Measuring Real Search Demand with Data',
-    subtitle: 'If Google Trends shows **when and where** people are searching, Google Keyword Planner shows **how many people** are searching and how valuable those searches are. It’s the hard-number half of market validation — and a free tool that every small business owner can use.',
+    subtitle: 'If Google Trends shows when and where people are searching, Google Keyword Planner shows how many people are searching and how valuable those searches are. It’s the hard-number half of market validation — and a free tool that every small business owner can use.',
     excerpt: 'Keyword research is the foundation of any successful digital marketing strategy. Learn how to use Google Keyword Planner effectively to discover search volumes, competition levels, and seasonal trends that will guide your content and advertising decisions.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
@@ -45,7 +45,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 12,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-3.jpg',
+    thumbnailUrl: '/Google Ads Logo.PNG',
     order: 3
   },
   {
@@ -57,19 +57,19 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 9,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-4.jpg',
+    thumbnailUrl: '/Google Tag Manager Logo.PNG',
     order: 4
   },
   {
     slug: 'google-search-console-guide',
-    title: 'Google Search Console (GSC): Understanding and Improving Your Site\'s Visibility',
+    title: 'Google Search Console (GSC): Practical Guide to Visibility and Search Engine Optimization (SEO)',
     subtitle: 'Monitor your website\'s performance in Google search results and optimize for better visibility.',
     excerpt: 'Google Search Console provides invaluable insights into how your website appears in search results. This guide will help you understand search performance, identify technical issues, and implement strategies to improve your organic visibility.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 11,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-5.jpg',
+    thumbnailUrl: '/Google Search Console Logo.PNG',
     order: 5
   },
   {
