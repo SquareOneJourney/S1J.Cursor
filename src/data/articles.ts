@@ -38,7 +38,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'google-ads-guide',
-    title: 'Google Ads: Turning Keywords into Clicks and Conversions',
+    title: 'Google Ads: Turning Searches into Sales',
     subtitle: 'Step-by-step guide to using Google Ads to capture search demand, track results, and grow your business — written for real business owners.',
     excerpt: 'Google Ads can be overwhelming for beginners, but with the right approach, it becomes a powerful tool for growing your business. This guide covers everything from campaign setup to optimization strategies that actually work for small businesses.',
     author: 'SquareOneJourney Team',
@@ -50,7 +50,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'google-tag-manager-guide',
-    title: 'Google Tag Manager (GTM): Simplifying Tracking and Analytics',
+    title: 'Google Tag Manager (GTM): Streamline Tracking and Simplify Data Management',
     subtitle: 'Streamline your website tracking without touching code, making analytics accessible to everyone on your team.',
     excerpt: 'Google Tag Manager eliminates the need for developers to implement tracking codes. Learn how to set up comprehensive tracking for your website, understand user behavior, and make data-driven decisions without technical complexity.',
     author: 'SquareOneJourney Team',
@@ -155,7 +155,31 @@ export const articles: Article[] = [
     category: 'AI Creativity',
     thumbnailUrl: '/ATimage1-nano-banana.png',
     order: 12
-  }
+  },
+  {
+    slug: 'content-creation-realtor-images',
+    title: 'How Realtors Can Use AI to Make Every Listing Look Its Best',
+    subtitle: 'From cloudy skies to cluttered rooms — how real estate agents can use AI image tools to polish every property photo.',
+    excerpt: 'Discover how tools like Nano Banana can replace gray skies, fix lighting, and declutter rooms — helping realtors post listings faster and show homes in their best light.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-14',
+    readingTime: 8,
+    category: 'Content Creation',
+    thumbnailUrl: '/realtor-sky-replacement.png',
+    order: 13
+  },
+  {
+    slug: 'content-creation-online-retailers',
+    title: 'How AI Image Tools Help Online Retailers Upgrade Their Product Photos (Without a Studio)',
+    subtitle: 'Create clean, professional product images that boost trust and sales — all using Gemini\'s Nano Banana image editor.',
+    excerpt: 'Great photos sell products. But not every small business has a lighting setup or professional backdrop. In this guide, we’ll show you how to use Nano Banana to remove clutter, fix lighting, and create consistent, studio-quality product photos right from your phone.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-14',
+    readingTime: 8,
+    category: 'AI Creativity',
+    thumbnailUrl: '/ATimage2-online-retailers.png',
+    order: 14
+  },    
 ];
 
 export const getArticleBySlug = (slug: string): Article | undefined => {

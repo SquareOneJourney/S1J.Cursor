@@ -19,6 +19,8 @@ import GoogleAdsLocalCampaignsGuide from '../../content/articles/google-ads-loca
 import GoogleMapsOptimizationGuide from '../../content/articles/google-maps-optimization-guide.mdx';
 import GoogleReviewsStrategyGuide from '../../content/articles/google-reviews-strategy-guide.mdx';
 import NanoBananaPromptCheatSheetGuide from '../../content/articles/nano-banana-prompt-cheat-sheet.mdx';
+import ContentCreationRealtorImagesGuide from '../../content/articles/content-creation-realtor-images.mdx';
+import ContentCreationOnlineRetailersGuide from '../../content/articles/content-creation-online-retailers.mdx';
 
 const mdxComponents = {
   GoogleTrendsGuide,
@@ -33,6 +35,8 @@ const mdxComponents = {
   GoogleMapsOptimizationGuide,
   GoogleReviewsStrategyGuide,
   NanoBananaPromptCheatSheetGuide,
+  ContentCreationRealtorImagesGuide,
+  ContentCreationOnlineRetailersGuide,
 };
 
 const ExternalLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
