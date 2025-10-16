@@ -2,7 +2,6 @@ export interface Article {
   slug: string;
   title: string;
   subtitle: string;
-  excerpt: string;
   author: string;
   publishedDate: string;
   readingTime: number;
@@ -16,7 +15,6 @@ export const articles: Article[] = [
     slug: 'google-trends-guide',
     title: 'Google Trends: A Practical Guide to Understanding Search Interest',
     subtitle: 'Learn how to use Google Trends to discover what people are searching for and identify emerging opportunities in your market.',
-    excerpt: 'Google Trends is one of the most powerful yet underutilized tools for understanding search behavior. This comprehensive guide will teach you how to leverage search interest data to make informed business decisions, spot trends before they peak, and understand your audience better.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 8,
@@ -27,8 +25,7 @@ export const articles: Article[] = [
   {
     slug: 'google-keyword-planner-guide',
     title: 'Google Keyword Planner: Measuring Real Search Demand with Data',
-    subtitle: 'If Google Trends shows when and where people are searching, Google Keyword Planner shows how many people are searching and how valuable those searches are. It’s the hard-number half of market validation — and a free tool that every small business owner can use.',
-    excerpt: 'Keyword research is the foundation of any successful digital marketing strategy. Learn how to use Google Keyword Planner effectively to discover search volumes, competition levels, and seasonal trends that will guide your content and advertising decisions.',
+    subtitle: 'If Google Trends shows when and where people are searching, Google Keyword Planner shows how many people are searching and how valuable those searches are.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 10,
@@ -40,7 +37,6 @@ export const articles: Article[] = [
     slug: 'google-ads-guide',
     title: 'Google Ads: Turning Searches into Sales',
     subtitle: 'Step-by-step guide to using Google Ads to capture search demand, track results, and grow your business — written for real business owners.',
-    excerpt: 'Google Ads can be overwhelming for beginners, but with the right approach, it becomes a powerful tool for growing your business. This guide covers everything from campaign setup to optimization strategies that actually work for small businesses.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 12,
@@ -52,7 +48,6 @@ export const articles: Article[] = [
     slug: 'google-tag-manager-guide',
     title: 'Google Tag Manager (GTM): Streamline Tracking and Simplify Data Management',
     subtitle: 'Streamline your website tracking without touching code, making analytics accessible to everyone on your team.',
-    excerpt: 'Google Tag Manager eliminates the need for developers to implement tracking codes. Learn how to set up comprehensive tracking for your website, understand user behavior, and make data-driven decisions without technical complexity.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 9,
@@ -64,7 +59,6 @@ export const articles: Article[] = [
     slug: 'google-search-console-guide',
     title: 'Google Search Console (GSC): Practical Guide to Visibility and Search Engine Optimization (SEO)',
     subtitle: 'Monitor your website\'s performance in Google search results and optimize for better visibility.',
-    excerpt: 'Google Search Console provides invaluable insights into how your website appears in search results. This guide will help you understand search performance, identify technical issues, and implement strategies to improve your organic visibility.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 11,
@@ -76,7 +70,6 @@ export const articles: Article[] = [
     slug: 'google-analytics-4-guide',
     title: 'Google Analytics 4 (GA4): Turning Tracking into Insights',
     subtitle: 'Navigate the new GA4 interface and extract meaningful insights from your website data.',
-    excerpt: 'Google Analytics 4 represents a fundamental shift in how we understand user behavior. Learn how to set up proper tracking, interpret the new event-based data model, and use insights to improve your website and marketing efforts.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 13,
@@ -88,7 +81,6 @@ export const articles: Article[] = [
     slug: 'google-looker-studio-guide',
     title: 'Google Looker Studio: Visualizing Your Data Clearly and Effectively',
     subtitle: 'Create compelling reports and dashboards that make complex data easy to understand and act upon.',
-    excerpt: 'Data visualization is crucial for making informed business decisions. Google Looker Studio (formerly Data Studio) helps you create professional reports and dashboards that communicate insights clearly to stakeholders and team members.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 7,
@@ -100,7 +92,6 @@ export const articles: Article[] = [
     slug: 'google-business-profile-guide',
     title: 'Google Business Profile (GBP): Standing Out in Local Search',
     subtitle: 'Optimize your Google Business Profile to attract more local customers and improve your search visibility.',
-    excerpt: 'For local businesses, Google Business Profile is essential for appearing in local search results. Learn how to optimize your profile, manage reviews, post updates, and use insights to attract more customers in your area.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 9,
@@ -112,7 +103,6 @@ export const articles: Article[] = [
     slug: 'google-ads-local-campaigns-guide',
     title: 'Google Ads Local Campaigns: Boosting Real-World Visibility',
     subtitle: 'Drive foot traffic and phone calls with targeted local advertising campaigns that reach customers near you.',
-    excerpt: 'Local campaigns help businesses drive in-store visits, phone calls, and directions requests. This guide covers how to set up and optimize local campaigns that bring customers through your doors and generate real-world business results.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 8,
@@ -124,7 +114,6 @@ export const articles: Article[] = [
     slug: 'google-maps-optimization-guide',
     title: 'Google Maps Optimization: Being the First Place People See',
     subtitle: 'Ensure your business appears prominently in Google Maps searches and attracts nearby customers.',
-    excerpt: 'Google Maps optimization goes beyond just having a Business Profile. Learn advanced strategies for improving your Maps visibility, managing location data, and ensuring customers can easily find and contact your business.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 10,
@@ -136,7 +125,6 @@ export const articles: Article[] = [
     slug: 'google-reviews-strategy-guide',
     title: 'Google Reviews Strategy: Building Trust and Improving Rankings',
     subtitle: 'Develop a systematic approach to managing and growing your Google reviews for better visibility and credibility.',
-    excerpt: 'Google reviews significantly impact both your search rankings and customer trust. This comprehensive guide covers how to encourage positive reviews, respond to negative feedback, and use reviews as a competitive advantage in your market.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-15',
     readingTime: 11,
@@ -148,7 +136,6 @@ export const articles: Article[] = [
     slug: 'nano-banana-prompt-cheat-sheet',
     title: 'Explore Gemini\'s Nano Banana Image Editor',
     subtitle: 'Nano Banana, what\'s all the fuss about?',
-    excerpt: 'No such thing as a "perfect" AI image prompt. But we can still have some fun exploring a few we have tested and think are worth sharing.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-10',
     readingTime: 7,
@@ -160,7 +147,6 @@ export const articles: Article[] = [
     slug: 'content-creation-realtor-images',
     title: 'How Realtors Can Use AI to Make Every Listing Look Its Best',
     subtitle: 'From cloudy skies to cluttered rooms — how real estate agents can use AI image tools to polish every property photo.',
-    excerpt: 'Discover how tools like Nano Banana can replace gray skies, fix lighting, and declutter rooms — helping realtors post listings faster and show homes in their best light.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-14',
     readingTime: 8,
@@ -172,14 +158,24 @@ export const articles: Article[] = [
     slug: 'content-creation-online-retailers',
     title: 'How AI Image Tools Help Online Retailers Upgrade Their Product Photos (Without a Studio)',
     subtitle: 'Create clean, professional product images that boost trust and sales — all using Gemini\'s Nano Banana image editor.',
-    excerpt: 'Great photos sell products. But not every small business has a lighting setup or professional backdrop. In this guide, we’ll show you how to use Nano Banana to remove clutter, fix lighting, and create consistent, studio-quality product photos right from your phone.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-14',
     readingTime: 8,
     category: 'AI Creativity',
     thumbnailUrl: '/ATimage2-online-retailers.png',
     order: 14
-  },    
+  },
+  {
+    slug: 'content-creation-night-with-ai',
+    title: 'I Spent The Night With ChatGPT',
+    subtitle: 'Kyle, made this for you buddy but it sucks. We will replace it completely with your article.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-14',
+    readingTime: 8,
+    category: 'AI Journey',
+    thumbnailUrl: '/ATimage3-night-with-ai.png',
+    order: 15
+  },
 ];
 
 export const getArticleBySlug = (slug: string): Article | undefined => {

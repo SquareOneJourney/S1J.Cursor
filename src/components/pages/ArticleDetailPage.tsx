@@ -21,6 +21,7 @@ import GoogleReviewsStrategyGuide from '../../content/articles/google-reviews-st
 import NanoBananaPromptCheatSheetGuide from '../../content/articles/nano-banana-prompt-cheat-sheet.mdx';
 import ContentCreationRealtorImagesGuide from '../../content/articles/content-creation-realtor-images.mdx';
 import ContentCreationOnlineRetailersGuide from '../../content/articles/content-creation-online-retailers.mdx';
+import ContentCreationNightWithAiGuide from '../../content/articles/content-creation-night-with-ai.mdx';
 
 const mdxComponents = {
   GoogleTrendsGuide,
@@ -37,6 +38,7 @@ const mdxComponents = {
   NanoBananaPromptCheatSheetGuide,
   ContentCreationRealtorImagesGuide,
   ContentCreationOnlineRetailersGuide,
+  ContentCreationNightWithAiGuide,
 };
 
 const ExternalLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({

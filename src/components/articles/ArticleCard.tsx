@@ -66,13 +66,8 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         </h3>
 
         {/* Subtitle */}
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-4">
           {article.subtitle}
-        </p>
-
-        {/* Excerpt */}
-        <p className="text-gray-700 text-sm leading-relaxed mb-4 line-clamp-3">
-          {article.excerpt}
         </p>
 
         {/* Meta */}
