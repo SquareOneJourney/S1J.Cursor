@@ -151,7 +151,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-14',
     readingTime: 8,
     category: 'Content Creation',
-    thumbnailUrl: '/realtor-sky-replacement.png',
+    thumbnailUrl: '/House Articles Page.png',
     order: 13
   },
   {
