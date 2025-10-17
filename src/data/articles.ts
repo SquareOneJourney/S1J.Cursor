@@ -176,6 +176,17 @@ export const articles: Article[] = [
     thumbnailUrl: '/ATimage3-night-with-ai.png',
     order: 15
   },
+  {
+    slug: 'content-creation-restaurant-photos',
+    title: 'Real Photos, Real Results: AI Prompts for Restaurant Owners',
+    subtitle: 'Three simple AI image prompts to help busy restaurant owners clean up, brighten, and balance their own photos — without hiring a photographer.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-16',
+    readingTime: 8,
+    category: 'Content Creation',
+    thumbnailUrl: '/restaurant-ai-prompts-thumbnail.png',
+    order: 16
+  },  
 ];
 
 export const getArticleBySlug = (slug: string): Article | undefined => {
