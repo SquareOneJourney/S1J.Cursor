@@ -187,6 +187,17 @@ export const articles: Article[] = [
     thumbnailUrl: '/restaurant-ai-prompts-thumbnail.png',
     order: 16
   },  
+  {
+    slug: 'mediocracy-the-performance-of-principle',
+    title: 'The Performance of Principle — From Corporate Illusion to Independent Creation',
+    subtitle: 'A critique of performative corporate ethics and the moral case for creative independence.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-16',
+    readingTime: 8,
+    category: 'Content Creation',
+    thumbnailUrl: '/restaurant-ai-prompts-thumbnail.png',
+    order: 17
+  },  
 ];
 
 export const getArticleBySlug = (slug: string): Article | undefined => {
