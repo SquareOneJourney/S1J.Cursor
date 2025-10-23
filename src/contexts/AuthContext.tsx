@@ -1,19 +1,8 @@
-import React, { createContext, useEffect, useState } from 'react'
-import { User, Session } from '@supabase/supabase-js'
+import React, { useEffect, useState } from 'react'
+import type { Session, User } from '@supabase/supabase-js'
 import { supabase } from '../lib/supabase'
 import { showWelcomeMessage } from '../api/send-welcome-email'
-
-interface AuthContextType {
-  user: User | null
-  session: Session | null
-  loading: boolean
-  signUp: (email: string, password: string) => Promise<{ error: Error | null }>
-  signIn: (email: string, password: string) => Promise<{ error: Error | null }>
-  signInWithGoogle: () => Promise<{ error: Error | null }>
-  signOut: () => Promise<void>
-}
-
-export const AuthContext = createContext<AuthContextType | undefined>(undefined)
+import { AuthContext, type AuthContextType } from './auth-context'
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
@@ -99,7 +88,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await supabase.auth.signOut()
   }
 
-  const value = {
+  const value: AuthContextType = {
     user,
     session,
     loading,

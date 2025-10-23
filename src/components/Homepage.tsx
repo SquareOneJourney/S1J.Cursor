@@ -8,32 +8,32 @@ export function Homepage() {
     {
       id: 'stage-1',
       title: 'Stage 1: Build the Foundation',
-      subtitle: 'Establish the essential foundations for your business success.',
-      description: 'Market research, legal setup, and financial foundations to get your business started right.',
+      subtitle: '',
+      description: '',
       icon: Building2,
       color: 'bg-white border-gray-200 hover:bg-gray-50',
       iconColor: 'text-gray-600',
-      features: ['Market Research', 'Legal & Ethics', 'Finance & Accounting']
+      features: []
     },
     {
       id: 'stage-2',
       title: 'Stage 2: Grow Visibility',
-      subtitle: 'Build your brand presence and attract customers to your business.',
-      description: 'Marketing strategies, content creation, and customer experience to grow your audience.',
+      subtitle: '',
+      description: '',
       icon: Eye,
       color: 'bg-white border-gray-200 hover:bg-gray-50',
       iconColor: 'text-gray-600',
-      features: ['Marketing & Outreach', 'Content Creation', 'AI Tools', 'Customer Experience']
+      features: []
     },
     {
       id: 'stage-3',
       title: 'Stage 3: Scale & Sustain',
-      subtitle: 'Optimize operations, build partnerships, and scale your business sustainably.',
-      description: 'Sales optimization, operations, networking, and growth strategies for long-term success.',
+      subtitle: '',
+      description: '',
       icon: Scale,
       color: 'bg-white border-gray-200 hover:bg-gray-50',
       iconColor: 'text-gray-600',
-      features: ['Sales & Revenue', 'Operations', 'Networking', 'Growth & Scaling']
+      features: []
     }
   ];
 

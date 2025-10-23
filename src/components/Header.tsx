@@ -47,36 +47,22 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
       id: 'stage-1',
       title: 'Build the Foundation',
       icon: Building2,
-      description: 'Establish essential foundations',
-      items: [
-        { title: 'Market Research', description: 'Validate your business idea', tileId: 'market-research-validation' },
-        { title: 'Legal & Ethics', description: 'Set up business legally', tileId: 'basic-legal-business-ethics' },
-        { title: 'Finance & Accounting', description: 'Establish financial foundations', tileId: 'finance-accounting' }
-      ]
+      description: '',
+      items: []
     },
     {
       id: 'stage-2', 
       title: 'Grow Visibility',
       icon: Eye,
-      description: 'Build brand presence',
-      items: [
-        { title: 'Marketing & Outreach', description: 'Attract customers', tileId: 'marketing-outreach' },
-        { title: 'Content Creation', description: 'Create engaging content', tileId: 'content-creation' },
-        { title: 'AI Tools', description: 'Leverage AI for content', tileId: 'ai-content-creation' },
-        { title: 'Customer Experience', description: 'Deliver exceptional service', tileId: 'customer-experience' }
-      ]
+      description: '',
+      items: []
     },
     {
       id: 'stage-3',
       title: 'Scale & Sustain', 
       icon: TrendingUp,
-      description: 'Optimize and grow',
-      items: [
-        { title: 'Sales & Revenue', description: 'Optimize conversions', tileId: 'sales-conversions-revenue-optimization' },
-        { title: 'Operations', description: 'Streamline processes', tileId: 'operations-productivity' },
-        { title: 'Networking', description: 'Build partnerships', tileId: 'networking-partnerships' },
-        { title: 'Growth & Scaling', description: 'Scale sustainably', tileId: 'growth-scaling-testing-experimentation' }
-      ]
+      description: '',
+      items: []
     }
   ];
 
