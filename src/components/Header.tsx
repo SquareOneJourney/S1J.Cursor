@@ -87,7 +87,7 @@ export const Header = ({ onOpenLogin, onOpenSignUp }: HeaderProps) => {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
             </div>
-            <div className="text-xl font-light text-black tracking-tight">
+            <div className="text-xl font-light text-black tracking-tight ml-2 sm:ml-3">
               <span className="font-medium">Square</span>
               <span className="text-gray-600">One</span>
               <span className="font-medium">Journey</span>
