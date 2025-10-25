@@ -197,7 +197,29 @@ export const articles: Article[] = [
     category: 'Content Creation',
     thumbnailUrl: '/restaurant-ai-prompts-thumbnail.png',
     order: 17
-  },  
+  },
+  {
+    slug: 'perplexity',
+    title: 'Perplexity: The Search Tool That Actually Answers You',
+    subtitle: 'A plain-language guide to using Perplexity — the AI-powered search tool that turns complex research into clear, verified answers.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-23',
+    readingTime: 7,
+    category: 'AI Tools',
+    thumbnailUrl: '/Perplexity Main.PNG',
+    order: 18
+  },
+  {
+    slug: 'perplexity-comet',
+    title: 'Perplexity\'s Comet: The future of web browsing',
+    subtitle: 'Meet Perplexity\'s Comet — say goodbye to Chrome and Edge, the first-of-its-kind AI web browser that will change the way you work.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-23',
+    readingTime: 6,
+    category: 'AI Tools',
+    thumbnailUrl: '/Comet Main.png',
+    order: 19
+  },   
 ];
 
 export const getArticleBySlug = (slug: string): Article | undefined => {

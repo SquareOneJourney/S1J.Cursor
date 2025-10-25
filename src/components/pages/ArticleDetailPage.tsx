@@ -24,6 +24,8 @@ import ContentCreationOnlineRetailersGuide from '../../content/articles/content-
 import ContentCreationNightWithAiGuide from '../../content/articles/content-creation-night-with-ai.mdx';
 import ContentCreationRestaurantPhotosGuide from '../../content/articles/content-creation-restaurant-photos.mdx';
 import MediocracyThePerformanceOfPrincipleGuide from '../../content/articles/mediocracy-the-performance-of-principle.mdx';
+import PerplexityGuide from '../../content/articles/perplexity.mdx';
+import PerplexityCometGuide from '../../content/articles/perplexity-comet.mdx';
 
 const mdxComponents = {
   GoogleTrendsGuide,
@@ -43,6 +45,8 @@ const mdxComponents = {
   ContentCreationNightWithAiGuide,
   ContentCreationRestaurantPhotosGuide,
   MediocracyThePerformanceOfPrincipleGuide,
+  PerplexityGuide,
+  PerplexityCometGuide,
 };
 
 const ExternalLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
