@@ -133,7 +133,7 @@ export const articles: Article[] = [
     order: 11
   },
   {
-    slug: 'nano-banana-prompt-cheat-sheet',
+    slug: 'content-creation-nano-banana',
     title: 'Explore Gemini\'s Nano Banana Image Editor',
     subtitle: 'Nano Banana, what\'s all the fuss about?',
     author: 'SquareOneJourney Team',

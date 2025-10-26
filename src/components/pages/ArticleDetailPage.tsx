@@ -18,7 +18,7 @@ import GoogleBusinessProfileGuide from '../../content/articles/google-business-p
 import GoogleAdsLocalCampaignsGuide from '../../content/articles/google-ads-local-campaigns-guide.mdx';
 import GoogleMapsOptimizationGuide from '../../content/articles/google-maps-optimization-guide.mdx';
 import GoogleReviewsStrategyGuide from '../../content/articles/google-reviews-strategy-guide.mdx';
-import NanoBananaPromptCheatSheetGuide from '../../content/articles/nano-banana-prompt-cheat-sheet.mdx';
+import ContentCreationNanoBananaGuide from '../../content/articles/content-creation-nano-banana.mdx';
 import ContentCreationRealtorImagesGuide from '../../content/articles/content-creation-realtor-images.mdx';
 import ContentCreationOnlineRetailersGuide from '../../content/articles/content-creation-online-retailers.mdx';
 import ContentCreationNightWithAiGuide from '../../content/articles/content-creation-night-with-ai.mdx';
@@ -39,7 +39,7 @@ const mdxComponents = {
   GoogleAdsLocalCampaignsGuide,
   GoogleMapsOptimizationGuide,
   GoogleReviewsStrategyGuide,
-  NanoBananaPromptCheatSheetGuide,
+  ContentCreationNanoBananaGuide,
   ContentCreationRealtorImagesGuide,
   ContentCreationOnlineRetailersGuide,
   ContentCreationNightWithAiGuide,
