@@ -74,7 +74,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 13,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-6.jpg',
+    thumbnailUrl: '/GA4 Image1.png',
     order: 6
   },
   {
@@ -85,7 +85,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 7,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-7.jpg',
+    thumbnailUrl: '/GLS Image1.png',
     order: 7
   },
   {
@@ -96,7 +96,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 9,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-8.jpg',
+    thumbnailUrl: '/GBP Image1.png',
     order: 8
   },
   {
@@ -107,7 +107,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 8,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-9.jpg',
+    thumbnailUrl: '/GALC Image1.PNG',
     order: 9
   },
   {
@@ -118,7 +118,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 10,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-10.jpg',
+    thumbnailUrl: '/GMO Image1.png',
     order: 10
   },
   {
@@ -129,7 +129,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-15',
     readingTime: 11,
     category: 'Google Tools',
-    thumbnailUrl: '/placeholder-article-11.jpg',
+    thumbnailUrl: '/GR Image1.png',
     order: 11
   },
   {
@@ -162,7 +162,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-14',
     readingTime: 8,
     category: 'AI Creativity',
-    thumbnailUrl: '/ATimage2-online-retailers.png',
+    thumbnailUrl: '/Online Business Image1.png',
     order: 14
   },
   {
