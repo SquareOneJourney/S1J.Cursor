@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:force": "npm run clean:vite && vite --force",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean:vite": "node ./scripts/clean-cache.mjs"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
