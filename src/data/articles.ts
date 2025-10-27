@@ -184,7 +184,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-16',
     readingTime: 8,
     category: 'Content Creation',
-    thumbnailUrl: '/restaurant-ai-prompts-thumbnail.png',
+    thumbnailUrl: '/Hash Image.png',
     order: 16
   },  
   {
@@ -195,7 +195,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-16',
     readingTime: 8,
     category: 'Content Creation',
-    thumbnailUrl: '/restaurant-ai-prompts-thumbnail.png',
+    thumbnailUrl: '/ATimage3-night-with-ai.png',
     order: 17
   },
   {
@@ -206,29 +206,29 @@ export const articles: Article[] = [
     publishedDate: '2025-10-23',
     readingTime: 7,
     category: 'AI Tools',
-    thumbnailUrl: '/Perplexity Main.PNG',
+    thumbnailUrl: '/Perplexity Main.png',
     order: 18
   },
   {
     slug: 'perplexity-comet',
-    title: 'Perplexity\'s Comet: The future of web browsing',
+    title: 'Perplexity\'s Comet: The Future of Web Browsing',
     subtitle: 'Meet Perplexity\'s Comet — say goodbye to Chrome and Edge, the first-of-its-kind AI web browser that will change the way you work.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-23',
     readingTime: 6,
     category: 'AI Tools',
-    thumbnailUrl: '/Comet Main.png',
+    thumbnailUrl: '/Perplexity Comet Main.png',
     order: 19
   },  
   {
     slug: 'lindy',
-    title: 'Lindy AI Review: The Easiest Automation Platform for Real Work — With Real Limits',
+    title: 'Lindy AI Review: The Easiest Automation Platform for Real Work',
     subtitle: 'A rare product that delivers on its promise. Lindy’s AI agents are fast, flexible, and genuinely useful — just don’t underestimate how quickly you’ll hit the paywall.',
     author: 'SquareOneJourney Team',
     publishedDate: '2025-10-23',
     readingTime: 6,
     category: 'AI Tools',
-    thumbnailUrl: '/Lindy Image1.png',
+    thumbnailUrl: '/Lindy Main.png',
     order: 20
   },    
 ];
