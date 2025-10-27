@@ -219,7 +219,18 @@ export const articles: Article[] = [
     category: 'AI Tools',
     thumbnailUrl: '/Comet Main.png',
     order: 19
-  },   
+  },  
+  {
+    slug: 'lindy',
+    title: 'Lindy AI Review: The Easiest Automation Platform for Real Work — With Real Limits',
+    subtitle: 'A rare product that delivers on its promise. Lindy’s AI agents are fast, flexible, and genuinely useful — just don’t underestimate how quickly you’ll hit the paywall.',
+    author: 'SquareOneJourney Team',
+    publishedDate: '2025-10-23',
+    readingTime: 6,
+    category: 'AI Tools',
+    thumbnailUrl: '/Lindy Image1.png',
+    order: 20
+  },    
 ];
 
 export const getArticleBySlug = (slug: string): Article | undefined => {

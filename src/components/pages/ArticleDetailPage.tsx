@@ -26,6 +26,7 @@ import ContentCreationRestaurantPhotosGuide from '../../content/articles/content
 import MediocracyThePerformanceOfPrincipleGuide from '../../content/articles/mediocracy-the-performance-of-principle.mdx';
 import PerplexityGuide from '../../content/articles/perplexity.mdx';
 import PerplexityCometGuide from '../../content/articles/perplexity-comet.mdx';
+import LindyGuide from '../../content/articles/lindy.mdx';
 
 const mdxComponents = {
   GoogleTrendsGuide,
@@ -47,6 +48,7 @@ const mdxComponents = {
   MediocracyThePerformanceOfPrincipleGuide,
   PerplexityGuide,
   PerplexityCometGuide,
+  LindyGuide,
 };
 
 const ExternalLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
