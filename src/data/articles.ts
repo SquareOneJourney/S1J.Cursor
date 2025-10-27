@@ -206,7 +206,7 @@ export const articles: Article[] = [
     publishedDate: '2025-10-23',
     readingTime: 7,
     category: 'AI Tools',
-    thumbnailUrl: '/Perplexity Main1.png',
+    thumbnailUrl: '/Perplexity Main.png',
     order: 18
   },
   {
